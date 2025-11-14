@@ -28,6 +28,16 @@
             release-after-ms = <200>;
         };
 
+        htlayer: htlayer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HTLAYER";
+            bindings = <&mo>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            hold-while-undecided;
+        };
+
         zip_auto_mouse: zip_auto_mouse {
             compatible = "zmk,input-processor-temp-layer";
             #input-processor-cells = <2>;
@@ -119,7 +129,7 @@
                   &kp LALT  &kp LGUI  &kp LCTRL  &mo 2  &kp SPACE    &kp RET  &mo 3  &none  &kp LBKT   &kp RBKT
             >;
 
-            display-name = "Base";
+            display-name = "En";
         };
 
         ru {
@@ -128,7 +138,7 @@
 &kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA      &kp RU_CYRILLIC_ZE   &kp BSPC
 &kp TAB    &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE         &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
 &kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                         &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU         &kp RU_DOT           &kp RSHFT
-                                    &kp LALT              &kp KP_NUMBER_5     &kp LCTRL           &mo 2               &kp SPACE    &kp RET  &mo 4               &none                      &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
+                                    &kp LALT              &kp KP_NUMBER_5     &kp LCTRL           &htlayer 2 6        &kp SPACE    &kp RET  &htlayer 4 6        &none                      &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
             >;
         };
 
@@ -177,10 +187,10 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
-&trans  &mo 7   &mkp MB3  &mkp MB2  &mkp MB1  &mo 8                     &mo 8   &mkp MB1  &mkp MB2  &mkp MB3  &mo 7   &trans
-&trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
-                &trans    &trans    &trans    &trans  &trans    &trans  &trans  &trans    &trans    &trans
+&trans  &trans        &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans        &trans
+&trans  &htlayer 7 7  &mkp MB3  &mkp MB2  &mkp MB1  &mo 8                     &mo 8   &mkp MB1  &mkp MB2  &mkp MB3  &htlayer 7 7  &trans
+&trans  &trans        &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans        &trans
+                      &trans    &trans    &trans    &tog 6  &trans    &trans  &tog 6  &trans    &trans    &trans
             >;
 
             display-name = "Mouse";
@@ -189,7 +199,7 @@
         scroll {
             bindings = <
 &trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
-&trans  &trans  &mkp MB3  &mkp MB2  &mkp MB1  &trans                    &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans
+&trans  &tog 7  &mkp MB3  &mkp MB2  &mkp MB1  &trans                    &trans  &mkp MB1  &mkp MB2  &mkp MB3  &tog 7  &trans
 &trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
                 &trans    &trans    &trans    &trans  &trans    &trans  &trans  &trans    &trans    &trans
             >;
