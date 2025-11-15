@@ -138,16 +138,16 @@
 &kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA      &kp RU_CYRILLIC_ZE   &kp BSPC
 &kp TAB    &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE         &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
 &kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                         &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU         &kp RU_DOT           &kp RSHFT
-                                    &kp LALT              &kp KP_NUMBER_5     &kp LCTRL           &htlayer 2 6        &kp SPACE    &kp RET  &htlayer 4 6        &none                      &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
+                                    &kp LALT              &kp LA(TAB)         &kp LCTRL           &htlayer 2 6        &kp SPACE    &kp RET  &htlayer 4 6        &none                      &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
             >;
         };
 
         nav {
             bindings = <
-&trans      &kp N1  &kp N2    &kp N3   &kp N4    &kp N5                     &kp N6    &kp N7        &kp N8         &kp N9       &kp N0         &trans
-&trans      &trans  &trans    &trans   &trans    &kp RET                    &trans    &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &trans
-&kp LSHIFT  &trans  &kp HOME  &kp INS  &kp END   &kp DEL                    &kp CLCK  &kp LC(LEFT)  &kp PAGE_DOWN  &kp PAGE_UP  &kp LC(RIGHT)  &trans
-                    &trans    &trans   &kp LALT  &trans   &trans    &trans  &mo 5     &trans        &trans         &trans
+&trans      &kp N1  &kp N2    &kp N3   &kp N4   &kp N5                       &kp N6    &kp N7        &kp N8         &kp N9       &kp N0         &trans
+&kp LCTRL   &trans  &trans    &to_ru   &to_en   &kp RET                      &trans    &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &trans
+&kp LSHIFT  &trans  &kp HOME  &kp INS  &kp END  &kp DEL                      &kp CLCK  &kp LC(LEFT)  &kp PAGE_DOWN  &kp PAGE_UP  &kp LC(RIGHT)  &trans
+                    &trans    &trans   &trans   &trans   &trans    &kp LALT  &mo 5     &trans        &trans         &trans
             >;
 
             display-name = "Navigation";
