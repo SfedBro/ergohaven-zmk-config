@@ -123,9 +123,9 @@
 
         en {
             bindings = <
-&kp ESC    &kp Q  &kp D     &kp R        &kp W      &kp B                               &kp J         &kp F  &kp U      &kp P     &kp SEMI  &kp BSPC
-&kp TAB    &kp A  &kp S     &kp D        &kp F      &kp G                               &kp H         &kp J  &kp K      &kp L     &kp SEMI  &kp BSLH
-&kp LSHFT  &kp Z  &kp X     &kp C        &kp V      &kp B                               &kp N         &kp M  &kp COMMA  &kp DOT   &kp SQT   &kp RSHFT
+&kp ESC    &kp Q  &kp D     &kp R        &kp W      &kp B                               &kp J         &kp F  &kp U      &kp P     &kp SEMI   &kp BSPC
+&kp TAB    &kp A  &kp S     &kp H        &kp T      &kp G                               &kp Y         &kp N  &kp E      &kp O     &kp I      &kp BSLH
+&kp LSHFT  &kp Z  &kp X     &kp M        &kp C      &kp V                               &kp K         &kp L  &kp COMMA  &kp DOT   &kp SLASH  &kp RSHFT
                   &kp LALT  &kp LA(TAB)  &kp LCTRL  &htlayer 2 6  &kp SPACE    &kp RET  &htlayer 3 6  &none  &kp LBKT   &kp RBKT
             >;
 
