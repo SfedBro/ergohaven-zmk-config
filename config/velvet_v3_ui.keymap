@@ -1,4 +1,4 @@
-#include "keys_ru.h"
+о#include "keys_ru.h"
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -165,18 +165,18 @@
 &trackball { cpi = <1000>; };
 
 &trackball_listener {
-    input-processors = <&zip_auto_mouse 4 500>, <&zip_xy_scaler 9 20>;
+    input-processors = <&zip_xy_scaler 9 20>; //<&zip_auto_mouse 6 1000>, <&zip_xy_scaler 9 20>;
 
     scroller {
-        layers = <5>;
+        layers = <7>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            <&zip_xy_scaler 1 32>,
+            <&zip_xy_scaler 1 64>,
             <&zip_xy_to_scroll_mapper>;
     };
 
     sniper {
-        layers = <6>;
-        input-processors = <&zip_xy_scaler 1 4>;
+        layers = <8>;
+        input-processors = <&zip_xy_scaler 1 8>;
     };
 };
