@@ -75,7 +75,7 @@
 &trans  &kp Q  &kp D   &kp R     &kp W   &kp B                     &kp J   &kp F  &kp U      &kp P     &kp SEMI   &trans
 &trans  &kp A  &kp S   &kp H     &kp T   &kp G                     &kp Y   &kp N  &kp E      &kp O     &kp I      &kp BSLH
 &trans  &kp Z  &kp X   &kp M     &kp C   &kp V                     &kp K   &kp L  &kp COMMA  &kp DOT   &kp SLASH  &trans
-               &trans  &kp APOS  &trans  &trans  &trans    &trans  &trans  &none  &kp LBKT   &kp RBKT
+               &trans  &kp APOS  &trans  &trans  &trans    &trans  &trans  &kp LBKT   &kp RBKT
             >;
 
             display-name = "En";
@@ -87,7 +87,7 @@
 &trans         &kp HASH   &kp LT    &kp EQUAL  &kp GT    &kp GRAVE                    &kp CARET  &kp DQT   &kp UNDER  &kp SQT   &trans    &trans
 &kp RU_NUMERO  &kp BSLH   &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                     &kp PRCNT  &kp LBRC  &kp SEMI   &kp RBRC  &kp EXCL  &kp QUESTION
 &trans         &kp COMMA  &kp STAR  &kp COLON  &kp FSLH  &kp DLLR                     &kp AT     &kp PIPE  &kp TILDE  &kp AMPS  &kp DOT   &trans
-                          &trans    &trans     &trans    &trans     &tog 2    &trans  &trans     &none     &kp LBKT   &kp RBKT
+                          &trans    &trans     &trans    &trans     &tog 2    &trans  &trans     &kp LBKT   &kp RBKT
             >;
         };
 
@@ -96,7 +96,7 @@
 &trans  &kp N1     &kp N2      &kp N3     &kp N4     &kp N5                       &kp N6        &kp N7        &kp N8       &kp N9         &kp N0         &trans
 &trans  &kp LC(Z)  &kp LSHIFT  &kp LCTRL  &kp TAB    &kp RET                      &switch_lang  &kp LEFT      &kp UP       &kp DOWN       &kp RIGHT      &kp DEL
 &trans  &kp LC(Y)  &kp END     &kp HOME   &kp LC(C)  &kp LC(X)                    &kp CLCK      &kp LC(LEFT)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LC(RIGHT)  &trans
-                   &trans      &kp INS    &none      &none      &trans    &trans  &none         &none         &trans       &trans
+                   &trans      &kp INS    &none      &none      &trans    &trans  &none         &trans       &trans
             >;
 
             display-name = "Navigation";
@@ -107,7 +107,7 @@
 &none  &kp F1  &kp F2   &kp F3   &kp F4   &kp C_VOL_UP                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4  &none
 &none  &kp F5  &kp F6   &kp F7   &kp F8   &kp LWIN                        &out OUT_BLE  &kp C_VOL_DN  &kp K_MUTE        &kp C_VOL_UP    &none         &none
 &none  &kp F9  &kp F10  &kp F11  &kp F12  &kp C_VOL_DN                    &out OUT_USB  &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT      &none         &none
-               &none    &none    &none    &none         &trans    &trans  &none         &none         &bt BT_CLR        &studio_unlock
+               &none    &none    &none    &none         &trans    &trans  &none         &bt BT_CLR        &studio_unlock
             >;
 
             display-name = "Adjust";
@@ -118,7 +118,7 @@
 &none  &none         &none     &none     &none     &none                    &none  &none     &none     &none     &none         &none
 &none  &htlayer 6 6  &mkp MB3  &mkp MB2  &mkp MB1  &mo 7                    &mo 7  &mkp MB1  &mkp MB2  &mkp MB3  &htlayer 6 6  &none
 &none  &none         &none     &none     &none     &none                    &none  &none     &none     &none     &none         &none
-                     &none     &none     &none     &none  &tog 5    &tog 5  &none  &none     &none     &none
+                     &none     &none     &none     &none  &tog 5    &tog 5  &none  &none     &none
             >;
 
             display-name = "Mouse";
@@ -129,7 +129,7 @@
 &trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
 &trans  &trans  &mkp MB3  &mkp MB2  &mkp MB1  &trans                    &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans
 &trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
-                &trans    &trans    &trans    &trans  &trans    &trans  &trans  &trans    &trans    &trans
+                &trans    &trans    &trans    &trans  &trans    &trans  &trans  &trans    &trans
             >;
 
             display-name = "Scroll";
@@ -140,7 +140,7 @@
 &trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
 &trans  &trans  &mkp MB3  &mkp MB2  &mkp MB1  &trans                    &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans
 &trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
-                &trans    &trans    &trans    &trans  &trans    &trans  &trans  &trans    &trans    &trans
+                &trans    &trans    &trans    &trans  &trans    &trans  &trans  &trans    &trans
             >;
 
             display-name = "Sniper";
