@@ -63,19 +63,19 @@
         ru {
             display-name = "Ru";
             bindings = <
-&kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                                &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA      &kp RU_CYRILLIC_ZE   &kp BSPC
-&kp TAB    &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                                &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE         &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
-&kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                                 &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU         &kp RU_DOT           &kp RSHFT
-                                    &kp LA(TAB)           &kp RU_CYRILLIC_IO  &kp LCTRL           &kp SPACE           &htlayer 4 2    &htlayer 3 5  &kp ENTER           &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
+&kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                          &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA        &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &kp BSPC
+&kp TAB    &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                          &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL         &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
+&kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                           &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE         &kp RU_CYRILLIC_YU     &kp RU_DOT           &kp RSHFT
+                                    &kp LA(TAB)           &kp RU_CYRILLIC_IO  &kp LCTRL           &htlayer 4 2        &kp SPACE    &kp ENTER  &htlayer 3 5        &kp RU_CYRILLIC_HA         &kp RU_CYRILLIC_HARD_SIGN
             >;
         };
 
         en {
             bindings = <
-&trans  &kp Q  &kp D   &kp R     &kp W   &kp B                     &kp J   &kp F  &kp U      &kp P     &kp SEMI   &trans
-&trans  &kp A  &kp S   &kp H     &kp T   &kp G                     &kp Y   &kp N  &kp E      &kp O     &kp I      &kp BSLH
-&trans  &kp Z  &kp X   &kp M     &kp C   &kp V                     &kp K   &kp L  &kp COMMA  &kp DOT   &kp SLASH  &trans
-               &trans  &kp APOS  &trans  &trans  &trans    &trans  &trans  &kp LBKT   &kp RBKT
+&trans  &kp Q  &kp D   &kp R     &kp W   &kp B                     &kp J   &kp F     &kp U      &kp P    &kp SEMI   &trans
+&trans  &kp A  &kp S   &kp H     &kp T   &kp G                     &kp Y   &kp N     &kp E      &kp O    &kp I      &kp BSLH
+&trans  &kp Z  &kp X   &kp M     &kp C   &kp V                     &kp K   &kp L     &kp COMMA  &kp DOT  &kp SLASH  &trans
+               &trans  &kp APOS  &trans  &trans  &trans    &trans  &trans  &kp LBKT  &kp RBKT
             >;
 
             display-name = "En";
@@ -84,19 +84,19 @@
         symbols {
             display-name = "Symbols";
             bindings = <
-&trans         &kp HASH   &kp LT    &kp EQUAL  &kp GT    &kp GRAVE                    &kp CARET  &kp DQT   &kp UNDER  &kp SQT   &trans    &trans
-&kp RU_NUMERO  &kp BSLH   &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                     &kp PRCNT  &kp LBRC  &kp SEMI   &kp RBRC  &kp EXCL  &kp QUESTION
-&trans         &kp COMMA  &kp STAR  &kp COLON  &kp FSLH  &kp DLLR                     &kp AT     &kp PIPE  &kp TILDE  &kp AMPS  &kp DOT   &trans
-                          &trans    &trans     &trans    &trans     &tog 2    &trans  &trans     &kp LBKT   &kp RBKT
+&kp DELETE    &kp HASH      &kp LT        &kp TAB       &kp LEFT_BRACKET      &kp SINGLE_QUOTE                    &kp DOUBLE_QUOTES  &kp RIGHT_BRACKET      &kp EQUAL     &kp GREATER_THAN  &kp RU_NUMERO  &kp BACKSPACE
+&kp NUMBER_1  &kp BSLH      &kp QUESTION  &kp MINUS     &kp LEFT_PARENTHESIS  &kp COLON                           &kp SEMICOLON      &kp RIGHT_PARENTHESIS  &kp PLUS      &kp EXCLAMATION   &kp CARET      &kp NUMBER_0
+&kp NUMBER_2  &kp NUMBER_3  &kp PIPE      &kp SLASH     &kp LEFT_BRACE        &kp DOT                             &kp COMMA          &kp RIGHT_BRACE        &kp ASTERISK  &kp AMPS          &kp NUMBER_8   &kp NUMBER_9
+                            &kp NUMBER_4  &kp NUMBER_5  &trans                &tog 2            &trans    &trans  &mo 3              &kp NUMBER_6           &kp NUMBER_7
             >;
         };
 
         nav {
             bindings = <
-&trans  &kp N1     &kp N2      &kp N3     &kp N4     &kp N5                       &kp N6        &kp N7        &kp N8       &kp N9         &kp N0         &trans
-&trans  &kp LC(Z)  &kp LSHIFT  &kp LCTRL  &kp TAB    &kp RET                      &switch_lang  &kp LEFT      &kp UP       &kp DOWN       &kp RIGHT      &kp DEL
-&trans  &kp LC(Y)  &kp END     &kp HOME   &kp LC(C)  &kp LC(X)                    &kp CLCK      &kp LC(LEFT)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LC(RIGHT)  &trans
-                   &trans      &kp INS    &none      &none      &trans    &trans  &none         &trans       &trans
+&trans  &kp N1     &kp N2      &kp N3     &kp N4     &kp N5                     &kp N6        &kp N7        &kp N8       &kp N9         &kp N0         &trans
+&trans  &kp LC(Z)  &kp LSHIFT  &kp LCTRL  &kp TAB    &kp RET                    &switch_lang  &kp LEFT      &kp UP       &kp DOWN       &kp RIGHT      &kp DEL
+&trans  &kp LC(Y)  &kp END     &kp HOME   &kp LC(C)  &kp LC(X)                  &kp CLCK      &kp LC(LEFT)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LC(RIGHT)  &trans
+                   &trans      &kp INS    &none      &trans     &none    &none  &trans        &trans        &trans
             >;
 
             display-name = "Navigation";
@@ -104,10 +104,10 @@
 
         adj {
             bindings = <
-&none  &kp F1  &kp F2   &kp F3   &kp F4   &kp C_VOL_UP                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4  &none
-&none  &kp F5  &kp F6   &kp F7   &kp F8   &kp LWIN                        &out OUT_BLE  &kp C_VOL_DN  &kp K_MUTE        &kp C_VOL_UP    &none         &none
-&none  &kp F9  &kp F10  &kp F11  &kp F12  &kp C_VOL_DN                    &out OUT_USB  &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT      &none         &none
-               &none    &none    &none    &none         &trans    &trans  &none         &bt BT_CLR        &studio_unlock
+&none  &kp F1  &kp F2   &kp F3   &kp F4   &kp C_VOL_UP                  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &none
+&none  &kp F5  &kp F6   &kp F7   &kp F8   &kp LWIN                      &out OUT_BLE  &kp C_VOL_DN  &kp K_MUTE        &kp C_VOL_UP  &none         &none
+&none  &kp F9  &kp F10  &kp F11  &kp F12  &kp C_VOL_DN                  &out OUT_USB  &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT    &none         &none
+               &none    &none    &none    &trans        &none    &none  &trans        &bt BT_CLR    &studio_unlock
             >;
 
             display-name = "Adjust";
@@ -115,10 +115,10 @@
 
         mouse {
             bindings = <
-&none  &none         &none     &none     &none     &none                    &none  &none     &none     &none     &none         &none
-&none  &htlayer 6 6  &mkp MB3  &mkp MB2  &mkp MB1  &mo 7                    &mo 7  &mkp MB1  &mkp MB2  &mkp MB3  &htlayer 6 6  &none
-&none  &none         &none     &none     &none     &none                    &none  &none     &none     &none     &none         &none
-                     &none     &none     &none     &none  &tog 5    &tog 5  &none  &none     &none
+&none  &none         &none     &none     &none     &none                   &none   &none     &none     &none     &none         &none
+&none  &htlayer 6 6  &mkp MB3  &mkp MB2  &mkp MB1  &mo 7                   &mo 7   &mkp MB1  &mkp MB2  &mkp MB3  &htlayer 6 6  &none
+&none  &none         &none     &none     &none     &none                   &none   &none     &none     &none     &none         &none
+                     &none     &none     &none     &tog 5  &none    &none  &tog 5  &none     &none
             >;
 
             display-name = "Mouse";
