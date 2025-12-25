@@ -49,7 +49,7 @@
     combos {
         compatible = "zmk,combos";
 
-        SymbolsFromRu {
+        SymbolsRu {
             bindings = <&SwitchLangAndLayer>;
             key-positions = <39>;
             layers = <0>;
@@ -67,7 +67,7 @@
         SwitchLangAndLayer: SwitchLangAndLayer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&switch_lang &tog 2>;
+            bindings = <&kp LA(LEFT_SHIFT) &tog 2>;
             label = "SWITCHLANGANDLAYER";
         };
     };
