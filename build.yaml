@@ -3,13 +3,13 @@ include:
   - board: ergohaven
     shield: velvet_v3_ui_left
   - board: ergohaven
-    shield: velvet_v3_ui_right
+    shield: velvet_v3_ui_ruen
     keymap: velvet_v3_ui_ruen
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: velvet_v3_ui_right_ruen-ergohaven-zmk
   - board: ergohaven
-    shield: velvet_v3_ui_right
+    shield: velvet_v3_ui_ruen
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: ergohaven
