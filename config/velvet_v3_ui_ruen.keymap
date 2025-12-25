@@ -28,9 +28,9 @@
             release-after-ms = <200>;
         };
 
-        htlayer: hold_toggle_layer {
+        htlayer: htlayer {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TOGGLE_LAYER";
+            label = "HTLAYER";
             bindings = <&mo>, <&tog>;
 
             #binding-cells = <2>;
