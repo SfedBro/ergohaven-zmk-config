@@ -173,10 +173,10 @@
 
         en {
             bindings = <
-&trans  &kp Q  &kp D   &kp R     &kp W   &kp B                     &kp J   &kp F  &kp U      &kp P    &kp SEMI   &trans
-&trans  &kp A  &kp S   &kp H     &kp T   &kp G                     &kp Y   &kp N  &kp E      &kp O    &kp I      &kp BSLH
-&trans  &kp Z  &kp X   &kp M     &kp C   &kp V                     &kp K   &kp L  &kp COMMA  &kp DOT  &kp SLASH  &trans
-               &trans  &kp APOS  &trans  &trans  &trans    &trans  &trans  &none  &none      &none
+&trans  &kp Q  &kp D   &kp R  &kp W   &none                     &none   &kp J  &kp F  &kp U  &kp P  &trans
+&none   &kp A  &kp S   &kp H  &kp T   &kp G                     &kp Y   &kp N  &kp E  &kp O  &kp I  &none
+&trans  &kp Z  &kp X   &kp C  &kp V   &none                     &none   &kp M  &kp L  &kp B  &kp K  &trans
+               &trans  &none  &trans  &trans  &trans    &trans  &trans  &none  &none  &none
             >;
 
             display-name = "En";
