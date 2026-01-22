@@ -77,19 +77,19 @@
         SymbolsRu {
             bindings = <&SwitchLangAndLayer>;
             key-positions = <39>;
-            layers = <0 2>;
+            layers = <1 2>;
         };
 
         ru_hard_sign {
             bindings = <&kp RU_CYRILLIC_HARD_SIGN>;
             key-positions = <31 42>;
-            layers = <0>;
+            layers = <1>;
         };
 
         ru_io {
             bindings = <&kp RU_CYRILLIC_IO>;
             key-positions = <5 39>;
-            layers = <0>;
+            layers = <1>;
         };
     };
 
@@ -97,7 +97,7 @@
         switch_lang: switch_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LSHIFT) &tog 1 &tog 0>;
+            bindings = <&kp LA(LSHIFT) &tog 0 &tog 1>;
             label = "SWITCH_LANG";
         };
 
@@ -161,25 +161,25 @@
     keymap {
         compatible = "zmk,keymap";
 
-        ru {
-            display-name = "Ru";
-            bindings = <
-&kp ESC             &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                          &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &kp BSPC
-&kp RU_CYRILLIC_IO  &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                          &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
-&kp LSHFT           &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                           &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &kp RU_CYRILLIC_HA   &kp RSHFT
-                                             &none                 &none               &kp LCTRL           &htlayer 5 3        &kp SPACE    &kp ENTER  &htlayer 4 6        &none                      &none                &none
-            >;
-        };
-
         en {
             bindings = <
-&trans  &kp Q  &kp D  &kp R  &kp W   &none                     &none   &kp F  &kp U  &kp P  &kp J  &trans
-&none   &kp A  &kp S  &kp H  &kp T   &kp G                     &kp Y   &kp N  &kp E  &kp O  &kp I  &none
-&trans  &kp Z  &kp X  &kp C  &kp V   &none                     &none   &kp M  &kp L  &kp B  &kp K  &trans
-               &none  &none  &trans  &trans  &trans    &trans  &trans  &none  &none  &none
+&kp ESC     &kp Q  &kp D  &kp R  &kp W   &none                     &none   &kp F  &kp U  &kp P  &kp J  &kp BSPC
+&kp CAPS    &kp A  &kp S  &kp H  &kp T   &kp G                     &kp Y   &kp N  &kp E  &kp O  &kp I  &none
+&kp LSHIFT  &kp Z  &kp X  &kp C  &kp V   &none                     &none   &kp M  &kp L  &kp B  &kp K  &kp RSHIFT
+                   &none  &none  &trans  &trans  &trans    &trans  &trans  &none  &none  &none
             >;
 
             display-name = "En";
+        };
+
+        ru {
+            display-name = "Ru";
+            bindings = <
+&kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                          &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &kp BSPC
+&kp CAPS   &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                          &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
+&kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                           &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &kp RU_CYRILLIC_HA   &kp RSHFT
+                                    &none                 &none               &kp LCTRL           &htlayer 5 3        &kp SPACE    &kp ENTER  &htlayer 4 6        &none                      &none                &none
+            >;
         };
 
         syru {
