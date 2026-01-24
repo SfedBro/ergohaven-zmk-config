@@ -97,64 +97,74 @@
         switch_lang: switch_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LSHIFT) &tog 0 &tog 1>;
+            bindings = <&kp LA(LSHIFT) &tog 0 &tog 1 &kp F13>;
             label = "SWITCH_LANG";
-        };
-
-        SwitchLangAndLayer: SwitchLangAndLayer {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_SHIFT) &tog 4>;
-            label = "SWITCHLANGANDLAYER";
-        };
-
-        layer_en: layer_ru {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F13>;
-            label = "LAYER_RU";
-        };
-
-        layer_ru: layer_en {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F14>;
-            label = "LAYER_EN";
         };
 
         layer_sym: layer_sym {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F15>;
+            bindings =
+                <&macro_press>,
+                <&kp F15>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp F15>;
+
             label = "LAYER_SYM";
         };
 
         layer_nav: layer_nav {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F16>;
+            bindings =
+                <&macro_press>,
+                <&kp F16>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp F16>;
+
             label = "LAYER_NAV";
         };
 
-        layer_mouse: layer_mouse {
+        toggle_mouse: layer_mouse {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F17>;
+            bindings = <&kp F17 &tog 6>;
             label = "LAYER_MOUSE";
         };
 
         layer_scroll: layer_scroll {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F18>;
+            bindings =
+                <&macro_press>,
+                <&kp F18>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp F18>;
+
             label = "LAYER_SCROLL";
         };
 
-        layer_adj: layer_sniper {
+        toggle_scroll: layer_sniper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F19>;
+            bindings = <&kt F18 &tog 7>;
             label = "LAYER_SNIPER";
+        };
+
+        layer_adj: layer_adj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp F19>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp F19>;
+
+            label = "LAYER_ADJ";
         };
     };
 
