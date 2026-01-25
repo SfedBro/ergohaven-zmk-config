@@ -101,15 +101,15 @@
             label = "SWITCH_LANG";
         };
 
-        layer_sym: layer_sym {
+        layer_syml: layer_sym {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp F15>,
+                <&kp F15 &mo 2>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&kp F15>;
+                <&mo 2 &kp F15>;
 
             label = "LAYER_SYM";
         };
@@ -119,10 +119,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp F16>,
+                <&kp F16 &mo 4>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&kp F16>;
+                <&mo 4 &kp F16>;
 
             label = "LAYER_NAV";
         };
@@ -139,10 +139,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp F18>,
+                <&kp F18 &mo 7>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&kp F18>;
+                <&mo 7 &kp F18>;
 
             label = "LAYER_SCROLL";
         };
@@ -159,12 +159,25 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp F19>,
+                <&kp F19 &mo 5>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&kp F19>;
+                <&mo 5 &kp F19>;
 
             label = "LAYER_ADJ";
+        };
+
+        layer_symr: layer_symr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp F15 &mo 3>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 3 &kp F15>;
+
+            label = "LAYER_SYMR";
         };
     };
 
