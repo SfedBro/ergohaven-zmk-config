@@ -101,7 +101,7 @@
             label = "SWITCH_LANG";
         };
 
-        layer_syml: layer_sym {
+        layer_syml: layer_syml {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -112,6 +112,19 @@
                 <&mo 2 &kp F15>;
 
             label = "LAYER_SYM";
+        };
+
+        layer_symr: layer_symr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp F15 &mo 3>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 3 &kp F15>;
+
+            label = "LAYER_SYMR";
         };
 
         layer_nav: layer_nav {
@@ -127,7 +140,7 @@
             label = "LAYER_NAV";
         };
 
-        toggle_mouse: layer_mouse {
+        toggle_mouse: toggle_mouse {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp F17 &tog 6>;
@@ -147,7 +160,7 @@
             label = "LAYER_SCROLL";
         };
 
-        toggle_scroll: layer_sniper {
+        toggle_scroll: toggle_scroll {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt F18 &tog 7>;
@@ -165,19 +178,6 @@
                 <&mo 5 &kp F19>;
 
             label = "LAYER_ADJ";
-        };
-
-        layer_symr: layer_symr {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp F15 &mo 3>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo 3 &kp F15>;
-
-            label = "LAYER_SYMR";
         };
     };
 
