@@ -85,6 +85,33 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        quotes: quotes {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QUOTES";
+            bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot_comma: dot_comma {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_COMMA";
+            bindings = <&kp DOT>, <&kp COMMA>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        div_mul: div_mul {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DIV_MUL";
+            bindings = <&kp SLASH>, <&kp STAR>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -228,10 +255,10 @@
         symr {
             display-name = "SymRight";
             bindings = <
-&kp DEL  &none  &none  &none  &none  &none                   &kp N6             &kp N7       &kp N8        &kp N9         &kp N0         &kp BACKSPACE
-&none    &none  &none  &none  &none  &none                   &kp UNDERSCORE     &minus_plus  &kp EQUAL     &kp LESS_THAN  &kp SEMICOLON  &kp NUMBER_0
-&none    &none  &none  &none  &none  &none                   &kp DOUBLE_QUOTES  &kp DOT      &kp ASTERISK  &kp SLASH      &kp NUMBER_8   &kp NUMBER_9
-                &none  &none  &none  &trans  &none    &none  &none              &none        &kp NUMBER_6  &kp NUMBER_7
+&kp DEL  &none  &none  &none  &none  &none                   &kp N6          &kp N7       &kp N8        &kp N9         &kp N0         &kp BACKSPACE
+&none    &none  &none  &none  &none  &none                   &kp UNDERSCORE  &minus_plus  &kp EQUAL     &kp LESS_THAN  &kp SEMICOLON  &kp NUMBER_0
+&none    &none  &none  &none  &none  &none                   &quotes         &dot_comma   &div_mul      &kp SLASH      &kp NUMBER_8   &kp NUMBER_9
+                &none  &none  &none  &trans  &none    &none  &none           &none        &kp NUMBER_6  &kp NUMBER_7
             >;
         };
 
