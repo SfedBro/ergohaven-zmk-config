@@ -76,6 +76,15 @@
             tapping-term-ms = <200>;
             hold-while-undecided;
         };
+
+        minus_plus: minus_plus {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MINUS_PLUS";
+            bindings = <&kp MINUS>, <&kp PLUS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -219,10 +228,10 @@
         symr {
             display-name = "SymRight";
             bindings = <
-&kp DEL  &none  &none  &none  &none  &none                   &kp N6             &kp N7     &kp N8        &kp N9         &kp N0         &kp BACKSPACE
-&none    &none  &none  &none  &none  &none                   &kp UNDERSCORE     &kp MINUS  &kp EQUAL     &kp LESS_THAN  &kp SEMICOLON  &kp NUMBER_0
-&none    &none  &none  &none  &none  &none                   &kp DOUBLE_QUOTES  &kp DOT    &kp ASTERISK  &kp SLASH      &kp NUMBER_8   &kp NUMBER_9
-                &none  &none  &none  &trans  &none    &none  &none              &none      &kp NUMBER_6  &kp NUMBER_7
+&kp DEL  &none  &none  &none  &none  &none                   &kp N6             &kp N7       &kp N8        &kp N9         &kp N0         &kp BACKSPACE
+&none    &none  &none  &none  &none  &none                   &kp UNDERSCORE     &minus_plus  &kp EQUAL     &kp LESS_THAN  &kp SEMICOLON  &kp NUMBER_0
+&none    &none  &none  &none  &none  &none                   &kp DOUBLE_QUOTES  &kp DOT      &kp ASTERISK  &kp SLASH      &kp NUMBER_8   &kp NUMBER_9
+                &none  &none  &none  &trans  &none    &none  &none              &none        &kp NUMBER_6  &kp NUMBER_7
             >;
         };
 
