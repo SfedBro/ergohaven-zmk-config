@@ -129,13 +129,13 @@
         ru_hard_sign {
             bindings = <&kp RU_CYRILLIC_HARD_SIGN>;
             key-positions = <31 42>;
-            layers = <2>;
+            layers = <1>;
         };
 
         ru_io {
             bindings = <&kp RU_CYRILLIC_IO>;
             key-positions = <5 39>;
-            layers = <2>;
+            layers = <1>;
         };
 
         nav {
@@ -148,7 +148,7 @@
         switch_lang: switch_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LSHIFT) &tog 0 &tog 2 &kp F13>;
+            bindings = <&kp LA(LSHIFT) &tog 0 &tog 1 &kp F13>;
             label = "SWITCH_LANG";
         };
 
@@ -157,10 +157,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp F15 &mo 3>,
+                <&kp F15 &mo 2>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 3 &kp F15>;
+                <&mo 2 &kp F15>;
 
             label = "LAYER_SYM";
         };
@@ -170,10 +170,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp F15 &mo 4>,
+                <&kp F15 &mo 3>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 4 &kp F15>;
+                <&mo 3 &kp F15>;
 
             label = "LAYER_SYMR";
         };
@@ -183,10 +183,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp F16 &mo 5>,
+                <&kp F16 &mo 4>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 5 &kp F16>;
+                <&mo 4 &kp F16>;
 
             label = "LAYER_NAV";
         };
@@ -194,7 +194,7 @@
         toggle_mouse: toggle_mouse {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F17 &tog 7>;
+            bindings = <&kp F17 &tog 6>;
             label = "LAYER_MOUSE";
         };
 
@@ -203,10 +203,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp F18 &mo 8>,
+                <&kp F18 &mo 7>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 8 &kp F18>;
+                <&mo 7 &kp F18>;
 
             label = "LAYER_SCROLL";
         };
@@ -214,7 +214,7 @@
         toggle_scroll: toggle_scroll {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt F18 &tog 8>;
+            bindings = <&kt F18 &tog 7>;
             label = "LAYER_SNIPER";
         };
 
@@ -223,19 +223,12 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp F19 &mo 6>,
+                <&kp F19 &mo 5>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 6 &kp F19>;
+                <&mo 5 &kp F19>;
 
             label = "LAYER_ADJ";
-        };
-
-        toggle_game: toggle_game {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F20 &tog 9>;
-            label = "TOGGLE_GAME";
         };
     };
 
@@ -244,52 +237,42 @@
 
         en {
             bindings = <
-&kp ESC     &kp Q  &kp D         &kp R     &kp W      &none                                      &none          &kp F  &kp U    &kp P      &kp J  &kp BSPC
-&kp CAPS    &kp A  &kp S         &kp H     &kp T      &kp G                                      &kp Y          &kp N  &kp E    &kp O      &kp I  &to 1
-&kp LSHIFT  &kp Z  &kp X         &kp C     &kp V      &none                                      &none          &kp M  &kp L    &kp B      &kp K  &kp RSHIFT
-                   &kp QUESTION  &kp EXCL  &kp LCTRL  &layer_symr  &kp SPACE    &adj_kp 0 ENTER  &sym_mous 0 0  &none  &kp DOT  &kp COMMA
+&kp ESC     &kp Q  &kp D         &kp R     &kp W      &none                                            &none          &kp F  &kp U    &kp P      &kp J  &kp BSPC
+&kp CAPS    &kp A  &kp S         &kp H     &kp T      &kp G                                            &kp Y          &kp N  &kp E    &kp O      &kp I  &none
+&kp LSHIFT  &kp Z  &kp X         &kp C     &kp V      &none                                            &none          &kp M  &kp L    &kp B      &kp K  &kp RSHIFT
+                   &kp QUESTION  &kp EXCL  &kp LCTRL  &layer_symr  &nav_kp 0 SPACE    &adj_kp 0 ENTER  &sym_mous 0 0  &none  &kp DOT  &kp COMMA
             >;
 
             display-name = "En";
         };
 
-        game {
-            display-name = "Game";
-            bindings = <
-&htkey TAB ESC  &kp Q  &kp W         &kp E     &kp R         &kp T                                      &kp Y          &kp U  &kp I    &kp O      &kp P  &kp BSPC
-&kp LEFT_SHIFT  &kp A  &kp S         &kp D     &kp F         &kp G                                      &kp H          &kp J  &kp K    &kp L      &kp I  &to 0
-&kp LCTRL       &kp Z  &kp X         &kp C     &kp V         &kp B                                      &kp N          &kp M  &none    &none      &none  &kp RSHIFT
-                       &kp QUESTION  &kp EXCL  &kp LEFT_ALT  &layer_symr  &kp SPACE    &adj_kp 0 ENTER  &sym_mous 0 0  &none  &kp DOT  &kp COMMA
-            >;
-        };
-
         ru {
             display-name = "Ru";
             bindings = <
-&kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &kp BSPC
-&kp CAPS   &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                    &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
-&kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &kp RU_CYRILLIC_HA   &kp RSHFT
-                                    &kp RU_QUESTION       &kp RU_EXCLAMATION  &kp LCTRL           &trans              &trans    &trans  &trans              &none                      &kp RU_DOT           &kp RU_COMMA
+&kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                       &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &kp BSPC
+&kp CAPS   &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                       &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
+&kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                        &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &kp RU_CYRILLIC_HA   &kp RSHFT
+                                    &kp RU_QUESTION       &kp RU_EXCLAMATION  &kp LCTRL           &trans              &kp SPACE    &trans  &trans              &none                      &kp RU_DOT           &kp RU_COMMA
             >;
         };
 
         syml {
             display-name = "SymLeft";
             bindings = <
-&kp DELETE    &kp N1        &kp N2            &kp N3          &kp N4                &kp N5                            &none   &none  &none  &none  &none  &kp BACKSPACE
-&kp NUMBER_1  &kp CARET     &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp EXCLAMATION                   &none   &none  &none  &none  &none  &none
-&kp NUMBER_2  &kp NUMBER_3  &kp PIPE          &kp SLASH       &kp LESS_THAN         &kp GREATER_THAN                  &none   &none  &none  &none  &none  &none
-                            &kp NUMBER_4      &kp NUMBER_5    &none                 &none             &none    &none  &trans  &none  &none  &none
+&kp DELETE    &kp N1        &kp N2            &kp N3          &kp N4                &kp N5                            &none   &kp F  &kp U    &kp P      &kp J  &kp BSPC
+&kp NUMBER_1  &kp CARET     &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp EXCLAMATION                   &kp Y   &kp N  &kp E    &kp O      &kp I  &none
+&kp NUMBER_2  &kp NUMBER_3  &kp PIPE          &kp SLASH       &kp LESS_THAN         &kp GREATER_THAN                  &none   &kp M  &kp L    &kp B      &kp K  &kp RSHFT
+                            &kp NUMBER_4      &kp NUMBER_5    &none                 &none             &none    &none  &trans  &none  &kp DOT  &kp COMMA
             >;
         };
 
         symr {
             display-name = "SymRight";
             bindings = <
-&kp DEL  &none  &none  &none  &none  &none                   &kp N6          &kp N7       &kp N8        &kp N9         &kp N0         &kp BACKSPACE
-&none    &none  &none  &none  &none  &none                   &kp UNDERSCORE  &minus_plus  &kp EQUAL     &kp LESS_THAN  &kp SEMICOLON  &kp NUMBER_0
-&none    &none  &none  &none  &none  &none                   &quotes         &dot_comma   &div_mul      &kp SLASH      &kp NUMBER_8   &kp NUMBER_9
-                &none  &none  &none  &trans  &none    &none  &none           &none        &kp NUMBER_6  &kp NUMBER_7
+&kp DEL    &kp Q  &kp D         &kp R            &kp W  &none                   &kp N6          &kp N7       &kp N8        &kp N9         &kp N0         &kp BACKSPACE
+&none      &kp A  &kp S         &kp H            &kp T  &kp G                   &kp UNDERSCORE  &minus_plus  &kp EQUAL     &kp LESS_THAN  &kp SEMICOLON  &kp NUMBER_0
+&kp RSHFT  &kp Z  &kp X         &kp C            &kp V  &none                   &quotes         &dot_comma   &div_mul      &kp SLASH      &kp NUMBER_8   &kp NUMBER_9
+                  &kp QUESTION  &kp EXCLAMATION  &none  &trans  &none    &none  &none           &none        &kp NUMBER_6  &kp NUMBER_7
             >;
         };
 
@@ -318,7 +301,7 @@
         mouse {
             bindings = <
 &kp DELETE      &none           &none     &none     &none     &none                                  &none          &none     &none     &none     &none           &kp BACKSPACE
-&none           &scroll_ht 0 0  &mkp MB3  &mkp MB2  &mkp MB1  &mo 9                                  &mo 9          &mkp MB1  &mkp MB2  &mkp MB3  &scroll_ht 0 0  &none
+&none           &scroll_ht 0 0  &mkp MB3  &mkp MB2  &mkp MB1  &mo 8                                  &mo 8          &mkp MB1  &mkp MB2  &mkp MB3  &scroll_ht 0 0  &none
 &kp LEFT_SHIFT  &none           &none     &none     &none     &none                                  &none          &none     &none     &none     &none           &kp RIGHT_SHIFT
                                 &none     &none     &none     &toggle_mouse  &kp SPACE    &kp ENTER  &toggle_mouse  &none     &none     &none
             >;
@@ -329,7 +312,7 @@
         scroll {
             bindings = <
 &trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
-&trans  &tog 8  &mkp MB3  &mkp MB2  &mkp MB1  &trans                    &trans  &mkp MB1  &mkp MB2  &mkp MB3  &tog 8  &trans
+&trans  &tog 7  &mkp MB3  &mkp MB2  &mkp MB1  &trans                    &trans  &mkp MB1  &mkp MB2  &mkp MB3  &tog 7  &trans
 &trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
                 &trans    &trans    &trans    &trans  &trans    &trans  &trans  &none     &trans    &trans
             >;
