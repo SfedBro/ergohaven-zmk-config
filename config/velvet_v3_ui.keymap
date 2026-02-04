@@ -230,6 +230,13 @@
 
             label = "LAYER_ADJ";
         };
+
+        toggle_qwerty: toggle_game {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F20 &tog 9>;
+            label = "TOGGLE_GAME";
+        };
     };
 
     keymap {
