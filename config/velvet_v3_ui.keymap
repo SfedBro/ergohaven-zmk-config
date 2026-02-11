@@ -95,10 +95,10 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dot_comma: dot_comma {
+        comma_dot: comma_dot {
             compatible = "zmk,behavior-mod-morph";
-            label = "DOT_COMMA";
-            bindings = <&kp DOT>, <&kp COMMA>;
+            label = "COMMA_DOT";
+            bindings = <&kp COMMA>, <&kp DOT>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -120,6 +120,60 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+        };
+
+        equal_under: equal_under {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EQUAL_UNDER";
+            bindings = <&kp EQUAL>, <&kp UNDER>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        less_more: less_more {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LESS_MORE";
+            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        and_or: and_or {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AND_OR";
+            bindings = <&kp AMPERSAND>, <&kp PIPE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mod_pow: mod_pow {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_POW";
+            bindings = <&kp PERCENT>, <&kp CARET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        hash_num: hash_num {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HASH_NUM";
+            bindings = <&kp HASH>, <&kp RU_NUMERO>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dog_usd: dog_usd {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOG_USD";
+            bindings = <&kp AT_SIGN>, <&kp DOLLAR>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -269,10 +323,10 @@
         symr {
             display-name = "SymRight";
             bindings = <
-&kp DEL    &kp Q  &kp D         &kp R            &kp W  &none                   &kp N6          &kp N7       &kp N8        &kp N9         &kp N0         &kp BACKSPACE
-&none      &kp A  &kp S         &kp H            &kp T  &kp G                   &kp UNDERSCORE  &minus_plus  &kp EQUAL     &kp LESS_THAN  &kp SEMICOLON  &kp NUMBER_0
-&kp RSHFT  &kp Z  &kp X         &kp C            &kp V  &none                   &quotes         &dot_comma   &div_mul      &kp SLASH      &kp NUMBER_8   &kp NUMBER_9
-                  &kp QUESTION  &kp EXCLAMATION  &none  &trans  &none    &none  &none           &none        &kp NUMBER_6  &kp NUMBER_7
+&kp DEL    &kp Q  &kp D         &kp R            &kp W  &none                   &kp N6     &kp N7      &kp N8        &kp N9        &kp N0      &kp BACKSPACE
+&none      &kp A  &kp S         &kp H            &kp T  &kp G                   &quotes    &kp SEMI    &equal_under  &minus_plus   &less_more  &mod_pow
+&kp RSHFT  &kp Z  &kp X         &kp C            &kp V  &none                   &hash_num  &comma_dot  &less_more    &div_mul      &and_or     &dog_usd
+                  &kp QUESTION  &kp EXCLAMATION  &none  &trans  &none    &none  &none      &none       &kp NUMBER_6  &kp NUMBER_7
             >;
         };
 
