@@ -175,6 +175,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        hash_num: hash_num {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HASH_NUM";
+            bindings = <&kp HASH>, <&numero>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -284,6 +293,13 @@
 
             label = "LAYER_ADJ";
         };
+
+        numero: hash_num {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LSHIFT) &kp HASH &kp LA(LSHIFT)>;
+            label = "HASH_NUM";
+        };
     };
 
     keymap {
@@ -323,10 +339,10 @@
         symr {
             display-name = "SymRight";
             bindings = <
-&kp DEL    &kp Q  &kp D         &kp R            &kp W  &none                   &kp N6     &kp N7      &kp N8        &kp N9        &kp N0      &kp BACKSPACE
-&none      &kp A  &kp S         &kp H            &kp T  &kp G                   &quotes    &kp SEMI    &equal_under  &minus_plus   &less_more  &mod_pow
-&kp RSHFT  &kp Z  &kp X         &kp C            &kp V  &none                   &hash_num  &comma_dot  &less_more    &div_mul      &and_or     &dog_usd
-                  &kp QUESTION  &kp EXCLAMATION  &none  &trans  &none    &none  &none      &none       &kp NUMBER_6  &kp NUMBER_7
+&kp DEL    &kp Q  &kp D         &kp R            &kp W  &none                   &kp N6   &kp N7      &kp N8        &kp N9        &kp N0    &kp BACKSPACE
+&none      &kp A  &kp S         &kp H            &kp T  &kp G                   &quotes  &kp SEMI    &equal_under  &minus_plus   &mod_pow  &hash_num
+&kp RSHFT  &kp Z  &kp X         &kp C            &kp V  &none                   &numero  &comma_dot  &less_more    &div_mul      &and_or   &dog_usd
+                  &kp QUESTION  &kp EXCLAMATION  &none  &trans  &none    &none  &none    &none       &kp NUMBER_6  &kp NUMBER_7
             >;
         };
 
