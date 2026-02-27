@@ -158,15 +158,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        hash_num: hash_num {
-            compatible = "zmk,behavior-mod-morph";
-            label = "HASH_NUM";
-            bindings = <&kp HASH>, <&kp RU_NUMERO>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         dog_usd: dog_usd {
             compatible = "zmk,behavior-mod-morph";
             label = "DOG_USD";
