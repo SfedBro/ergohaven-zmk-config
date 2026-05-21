@@ -92,6 +92,7 @@
                 "' ",
                 ,
                 ,
+                ,
                 ";
 
             bindings =,
@@ -199,15 +200,16 @@
             layers = <2>;
         };
 
-        nav {
-            bindings = <&none>;
-            key-positions = <40 39>;
-        };
-
         printing {
             bindings = <&to 1>;
             key-positions = <40 41>;
             layers = <0>;
+        };
+
+        gaming {
+            bindings = <&to 0>;
+            key-positions = <3 28 31 8>;
+            layers = <1>;
         };
     };
 
@@ -374,10 +376,10 @@
 
         mouse {
             bindings = <
-&kp DELETE      &none           &none     &none     &none     &none                                  &none          &none     &none     &none     &none           &kp BACKSPACE
-&none           &scroll_ht 0 0  &mkp MB3  &mkp MB2  &mkp MB1  &mo 8                                  &mo 8          &mkp MB1  &mkp MB2  &mkp MB3  &scroll_ht 0 0  &none
-&kp LEFT_SHIFT  &none           &none     &none     &none     &none                                  &none          &none     &none     &none     &none           &kp RIGHT_SHIFT
-                                &none     &none     &none     &toggle_mouse  &kp SPACE    &kp ENTER  &toggle_mouse  &none     &none     &none
+&kp DELETE      &trans          &trans    &trans    &trans    &trans                                 &trans         &trans    &trans    &trans    &trans          &kp BACKSPACE
+&trans          &scroll_ht 0 0  &mkp MB3  &mkp MB2  &mkp MB1  &mo 8                                  &mo 8          &mkp MB1  &mkp MB2  &mkp MB3  &scroll_ht 0 0  &trans
+&kp LEFT_SHIFT  &trans          &trans    &trans    &trans    &trans                                 &trans         &trans    &trans    &trans    &trans          &kp RIGHT_SHIFT
+                                &trans    &trans    &trans    &toggle_mouse  &kp SPACE    &kp ENTER  &toggle_mouse  &none     &trans    &trans
             >;
 
             display-name = "Mouse";
