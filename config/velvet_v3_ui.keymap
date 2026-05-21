@@ -90,6 +90,7 @@
             compatible = "zmk,behavior-mod-morph";
             label =
                 "' ",
+                ,
                 ";
 
             bindings =,
@@ -200,6 +201,12 @@
         nav {
             bindings = <&none>;
             key-positions = <40 39>;
+        };
+
+        printing {
+            bindings = <&to 1>;
+            key-positions = <40 41>;
+            layers = <0>;
         };
     };
 
@@ -315,7 +322,7 @@
             bindings = <
 &kp ESC     &kp Q  &kp D         &kp R     &kp W      &none                                            &none          &kp F  &kp U    &kp P      &kp J    &kp BSPC
 &kp CAPS    &kp A  &kp S         &kp H     &kp T      &kp G                                            &kp Y          &kp N  &kp E    &kp O      &kp I    &none
-&kp LSHIFT  &kp Z  &kp X         &kp C     &kp V      &kp COMMA                                        &kp DOT        &kp M  &kp L    &kp B      &lt 6 K  &kp RSHIFT
+&kp LSHIFT  &kp Z  &kp X         &kp C     &kp V      &none                                            &none          &kp M  &kp L    &kp B      &lt 6 K  &kp RSHIFT
                    &kp QUESTION  &kp EXCL  &kp LCTRL  &layer_symr  &nav_kp 0 SPACE    &adj_kp 0 ENTER  &sym_mous 0 0  &none  &kp DOT  &kp COMMA
             >;
 
