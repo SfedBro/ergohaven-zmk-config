@@ -79,7 +79,7 @@
 
         minus_plus: minus_plus {
             compatible = "zmk,behavior-mod-morph";
-            label = "MINUS_PLUS";
+            label = "- +";
             bindings = <&kp MINUS>, <&kp PLUS>;
 
             #binding-cells = <0>;
@@ -88,7 +88,8 @@
 
         quotes: quotes {
             compatible = "zmk,behavior-mod-morph";
-            label = "QUOTES";
+            label = "' ", ";
+
             bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
 
             #binding-cells = <0>;
@@ -97,7 +98,7 @@
 
         comma_dot: comma_dot {
             compatible = "zmk,behavior-mod-morph";
-            label = "COMMA_DOT";
+            label = ", .";
             bindings = <&kp COMMA>, <&kp DOT>;
 
             #binding-cells = <0>;
@@ -106,7 +107,7 @@
 
         div_mul: div_mul {
             compatible = "zmk,behavior-mod-morph";
-            label = "DIV_MUL";
+            label = "/ *";
             bindings = <&kp SLASH>, <&kp STAR>;
 
             #binding-cells = <0>;
@@ -124,7 +125,7 @@
 
         equal_under: equal_under {
             compatible = "zmk,behavior-mod-morph";
-            label = "EQUAL_UNDER";
+            label = "= _";
             bindings = <&kp EQUAL>, <&kp UNDER>;
 
             #binding-cells = <0>;
@@ -133,7 +134,7 @@
 
         less_more: less_more {
             compatible = "zmk,behavior-mod-morph";
-            label = "LESS_MORE";
+            label = "< >";
             bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
 
             #binding-cells = <0>;
@@ -142,7 +143,7 @@
 
         and_or: and_or {
             compatible = "zmk,behavior-mod-morph";
-            label = "AND_OR";
+            label = "& |";
             bindings = <&kp AMPERSAND>, <&kp PIPE>;
 
             #binding-cells = <0>;
@@ -151,7 +152,7 @@
 
         mod_pow: mod_pow {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_POW";
+            label = "% ^";
             bindings = <&kp PERCENT>, <&kp CARET>;
 
             #binding-cells = <0>;
@@ -160,7 +161,7 @@
 
         dog_usd: dog_usd {
             compatible = "zmk,behavior-mod-morph";
-            label = "DOG_USD";
+            label = "@ $";
             bindings = <&kp AT_SIGN>, <&kp DOLLAR>;
 
             #binding-cells = <0>;
@@ -285,11 +286,11 @@
             label = "LAYER_ADJ";
         };
 
-        ru_num: hash_num {
+        ru_num: ru_num {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(LSHIFT) &kp HASH &kp LA(LSHIFT)>;
-            label = "HASH_NUM";
+            label = "№";
         };
     };
 
