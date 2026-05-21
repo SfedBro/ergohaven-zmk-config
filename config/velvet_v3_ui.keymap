@@ -93,6 +93,7 @@
                 ,
                 ,
                 ,
+                ,
                 ";
 
             bindings =,
@@ -101,6 +102,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp SQT>, <&kp DOUBLE_QUOTES>;
         };
 
         comma_dot: comma_dot {
