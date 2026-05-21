@@ -105,7 +105,6 @@
 
         div_mul: div_mul {
             compatible = "zmk,behavior-mod-morph";
-            label = "/ *";
             bindings = <&kp SLASH>, <&kp STAR>;
 
             #binding-cells = <0>;
