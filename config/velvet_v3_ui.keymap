@@ -79,7 +79,7 @@
 
         minus_plus: minus_plus {
             compatible = "zmk,behavior-mod-morph";
-            label = "- +";
+            label = "MINUS_PLUS";
             bindings = <&kp MINUS>, <&kp PLUS>;
 
             #binding-cells = <0>;
@@ -88,18 +88,7 @@
 
         quotes: quotes {
             compatible = "zmk,behavior-mod-morph";
-            label =
-                "' ",
-                ,
-                ,
-                ,
-                ,
-                ";
-
-            bindings =,
-                <&kp SINGLE_QUOTE>,
-                <&kp DOUBLE_QUOTES>;
-
+            label = "QUOTES";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp SQT>, <&kp DOUBLE_QUOTES>;
@@ -107,7 +96,7 @@
 
         comma_dot: comma_dot {
             compatible = "zmk,behavior-mod-morph";
-            label = ", .";
+            label = "COMMA_DOT";
             bindings = <&kp COMMA>, <&kp DOT>;
 
             #binding-cells = <0>;
