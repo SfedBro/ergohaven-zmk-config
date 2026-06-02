@@ -27,16 +27,6 @@
             excluded-positions = <>;
         };
 
-        sym_mous: sym_mous {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SYM_MOUS";
-            bindings = <&layer_sym_ru>, <&toggle_mouse>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-while-undecided;
-        };
-
         sym_navg: sym_navg {
             compatible = "zmk,behavior-hold-tap";
             label = "SYM_NAVG";
@@ -216,7 +206,13 @@
         layer_sym_ru: layer_syml {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_SHIFT) &layer_sym>;
+            bindings =
+                <&macro_press>,
+                <&kp LA(LSHIFT) &kp F15 &mo 3>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 3 &kp F15 &kp LA(LSHIFT)>;
+
             label = "LAYER_SYM";
         };
 
@@ -309,10 +305,10 @@
 
         en {
             bindings = <
-&kp ESC     &kp Q  &kp D         &kp R     &kp W      &none                                           &none          &kp F  &kp U    &kp P      &kp J    &kp BSPC
-&kp CAPS    &kp A  &kp S         &kp H     &kp T      &kp G                                           &kp Y          &kp N  &kp E    &kp O      &kp I    &none
-&kp LSHIFT  &kp Z  &kp X         &kp C     &kp V      &none                                           &none          &kp M  &kp L    &kp B      &lt 6 K  &kp RSHIFT
-                   &kp QUESTION  &kp EXCL  &kp LCTRL  &layer_sym  &nav_kp 0 SPACE    &adj_kp 0 ENTER  &sym_mous 0 0  &none  &kp DOT  &kp COMMA
+&kp ESC     &kp Q  &kp D         &kp R     &kp W      &none                                 &none            &kp F  &kp U    &kp P      &kp J    &kp BSPC
+&kp CAPS    &kp A  &kp S         &kp H     &kp T      &kp G                                 &kp Y            &kp N  &kp E    &kp O      &kp I    &none
+&kp LSHIFT  &kp Z  &kp X         &kp C     &kp V      &none                                 &none            &kp M  &kp L    &kp B      &lt 6 K  &kp RSHIFT
+                   &kp QUESTION  &kp EXCL  &kp LCTRL  &nav_kp 0 SPACE  &layer_sym    &none  &adj_kp 0 ENTER  &none  &kp DOT  &kp COMMA
             >;
 
             display-name = "En";
@@ -321,20 +317,20 @@
         ru {
             display-name = "Ru";
             bindings = <
-&kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                       &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE    &kp BSPC
-&kp CAPS   &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                       &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE   &kp RU_CYRILLIC_E
-&kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                        &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &lt 6 RU_CYRILLIC_HA  &kp RSHFT
-                                    &kp RU_QUESTION       &kp RU_EXCLAMATION  &kp LCTRL           &trans              &kp SPACE    &trans  &trans              &none                      &kp RU_DOT           &kp RU_COMMA
+&kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                          &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE    &kp BSPC
+&kp CAPS   &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                          &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE   &kp RU_CYRILLIC_E
+&kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                           &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &lt 6 RU_CYRILLIC_HA  &kp RSHFT
+                                    &kp RU_QUESTION       &kp RU_EXCLAMATION  &kp LCTRL           &nav_kp 0 SPACE     &layer_sym_ru    &none  &adj_kp 0 ENTER     &none                      &kp RU_DOT           &kp RU_COMMA
             >;
         };
 
         sym {
             display-name = "Symbols";
             bindings = <
-&kp DEL    &kp N1  &kp N2        &kp N3           &kp N4                &kp N5                           &kp N6    &kp N7      &kp N8        &kp N9        &kp N0    &kp BACKSPACE
-&none      &kp A   &kp LBKT      &kp LEFT_BRACE   &kp LEFT_PARENTHESIS  &kp EXCLAMATION                  &quotes   &kp SEMI    &equal_under  &minus_plus   &mod_pow  &hash_num
-&kp RSHFT  &kp Z   &kp X         &kp C            &kp V                 &none                            &dog_usd  &comma_dot  &less_more    &div_mul      &and_or   &kp RIGHT_SHIFT
-                   &kp QUESTION  &kp EXCLAMATION  &none                 &trans           &none    &none  &none     &none       &kp NUMBER_6  &kp NUMBER_7
+&kp DEL    &kp N1  &kp N2        &kp N3           &kp N4                &kp N5                            &kp N6    &kp N7      &kp N8        &kp N9        &kp N0    &kp BACKSPACE
+&none      &kp A   &kp LBKT      &kp LEFT_BRACE   &kp LEFT_PARENTHESIS  &kp EXCLAMATION                   &quotes   &kp SEMI    &equal_under  &minus_plus   &mod_pow  &hash_num
+&kp RSHFT  &kp Z   &kp X         &kp C            &kp V                 &none                             &dog_usd  &comma_dot  &less_more    &div_mul      &and_or   &kp RIGHT_SHIFT
+                   &kp QUESTION  &kp EXCLAMATION  &none                 &none            &trans    &none  &none     &none       &kp NUMBER_6  &kp NUMBER_7
             >;
         };
 
@@ -391,16 +387,6 @@
             >;
 
             display-name = "Sniper";
-        };
-
-        syml {
-            display-name = "SymLeft";
-            bindings = <
-&kp DELETE    &kp N1        &kp N2            &kp N3          &kp N4                &kp N5                           &none   &kp F  &kp U    &kp P      &kp J  &kp BSPC
-&kp NUMBER_1  &kp CARET     &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp EXCLAMATION                  &kp Y   &kp N  &kp E    &kp O      &kp I  &none
-&kp NUMBER_2  &kp NUMBER_3  &kp PIPE          &kp SLASH       &kp LESS_THAN         &none                            &none   &kp M  &kp L    &kp B      &kp K  &kp RSHFT
-                            &kp NUMBER_4      &kp NUMBER_5    &none                 &none            &none    &none  &trans  &none  &kp DOT  &kp COMMA
-            >;
         };
     };
 };
