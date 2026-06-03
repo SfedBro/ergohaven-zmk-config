@@ -193,6 +193,12 @@
             key-positions = <3 28 31 8>;
             layers = <1>;
         };
+
+        ruing {
+            bindings = <&switch_lang>;
+            key-positions = <39 42>;
+            layers = <1 2>;
+        };
     };
 
     macros {
