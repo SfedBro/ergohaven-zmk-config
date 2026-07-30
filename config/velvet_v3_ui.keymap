@@ -33,6 +33,20 @@
             #binding-cells = <0>;
             bindings = <&to L_RU>, <&kp LA(LSFT)>, <&kp F15>;
         };
+
+        // Хоткей Скриншота Windows (Win + Shift + S)
+        screen_snippet: screen_snippet {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(S))>;
+        };
+
+        // Хоткей Диспетчера Задач (Ctrl + Shift + Esc)
+        task_mgr: task_mgr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(ESC))>;
+        };
     };
 
     behaviors {
@@ -114,7 +128,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        /* LAYER 0: GAME (Левый большой палец: Alt | SPACE | NAV) */
+        /* LAYER 0: GAME */
         game_layer {
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T                      &kp Y  &kp U  &kp I     &kp O   &kp P    &kp BSPC
@@ -125,7 +139,7 @@
             >;
         };
 
-        /* LAYER 1: WORKMAN (Левый большой палец: ENTER | NAV_SPACE | SYM_BSPC) */
+        /* LAYER 1: WORKMAN */
         workman_layer {
             bindings = <
 &kp ESC    &kp Q  &kp D  &kp R  &kp W  &none                      &none  &kp F  &kp U     &kp P   &kp J    &kp TAB
@@ -136,29 +150,29 @@
             >;
         };
 
-        /* LAYER 2: RUSSIAN (Русский ЙЦУКЕН) */
+        /* LAYER 2: RUSSIAN (Полный набор 33 букв!) */
         russian_layer {
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T                      &kp Y  &kp U  &kp I     &kp O   &kp P    &kp TAB
-&kp LSHFT  &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SEMI &none
-&kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &none    &kp RSHFT
+&kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T                      &kp Y  &kp U  &kp I     &kp O   &kp P    &kp LBKT
+&kp LSHFT  &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp GRAVE                  &kp RBKT &kp B  &kp N   &kp M   &kp COMMA &kp DOT
                   &kp QUESTION &kp EXCL                          &kp ENTER &nav_spc L_NAV SPACE &sym_bspc L_SYM BSPC
-                  &kp DOT &kp COMMA &none                        &none &none &none
+                  &none &none &none                              &none &none &none
             >;
         };
 
-        /* LAYER 3: NAV (Хаб переключения слоев + мышь/стрелки) */
+        /* LAYER 3: NAV (Навигация + Скриншот + Task Manager + Win+D + Alt+Tab + F1-F12!) */
         nav_layer {
             bindings = <
-&bt BT_CLR &go_game     &go_workman  &go_ru       &trans &none    &kp F16  &kp PG_UP &kp UP   &kp PG_DN &trans   &sys_reset
-&trans     &mkp LCLK    &mkp RCLK    &mkp MCLK    &trans &none    &none    &kp LEFT  &kp DOWN &kp RIGHT &trans   &trans
-&trans     &kp HOME     &kp END      &trans       &trans &none    &none    &kp HOME  &trans   &kp END   &trans   &trans
-                        &kp C_VOL_DN &kp C_VOL_UP                         &trans    &trans
-                        &trans &trans &trans                              &none &none &none
+&bt BT_CLR &go_game     &go_workman  &go_ru       &screen_snippet &task_mgr   &kp F16  &kp F1  &kp F2   &kp F3   &kp F4   &kp F11
+&trans     &mkp LCLK    &mkp RCLK    &mkp MCLK    &kp LA(TAB)     &kp LG(D)   &none    &kp LEFT &kp DOWN &kp RIGHT &kp F5   &kp F12
+&trans     &kp HOME     &kp END      &trans       &trans          &none       &none    &kp F6   &kp F7   &kp F8   &kp F9   &kp F10
+                        &kp C_VOL_DN &kp C_VOL_UP                             &trans   &trans
+                        &trans &trans &trans                                  &none &none &none
             >;
         };
 
-        /* LAYER 4: SYM (Цифры и Символы) */
+        /* LAYER 4: SYM (Символы C#/C++ + Цифры 1-0) */
         sym_layer {
             bindings = <
 &trans     &kp N1     &kp N2     &kp N3     &kp N4    &kp N5       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0      &trans
