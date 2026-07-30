@@ -16,7 +16,6 @@
 
 / {
     macros {
-        // Макросы переключения базовых слоев с посылом F13/F14/F15 для AHK
         go_game: go_game {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -37,7 +36,7 @@
     };
 
     behaviors {
-        // Hold-Tap для Навигации на пробеле
+        // Левый большой палец: Нажатие = Space, Зажатие = NAV слой
         nav_spc: nav_spc {
             compatible = "zmk,behavior-hold-tap";
             label = "NAV_SPC";
@@ -47,17 +46,16 @@
             hold-while-undecided;
         };
 
-        // Hold-Tap для Символов на Enter
-        sym_ent: sym_ent {
+        // Второй большой палец: Нажатие = Backspace, Зажатие = SYM слой
+        sym_bspc: sym_bspc {
             compatible = "zmk,behavior-hold-tap";
-            label = "SYM_ENT";
+            label = "SYM_BSPC";
             bindings = <&mo L_SYM>, <&kp>;
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             hold-while-undecided;
         };
 
-        // Mod-Morphs для символов
         minus_plus: minus_plus {
             compatible = "zmk,behavior-mod-morph";
             label = "MINUS_PLUS";
@@ -73,21 +71,13 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        div_mul: div_mul {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DIV_MUL";
-            bindings = <&kp SLASH>, <&kp ASTERISK>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
         /* -------------------------------------------------------------------------------------------------
-         * LAYER 0: GAME (Стандартный QWERTY, чистый Space на левом пальце, переход в Workman справа)
+         * LAYER 0: GAME (Чистый Space, без вылетов слоев)
          * ------------------------------------------------------------------------------------------------- */
         game_layer {
             bindings = <
@@ -95,20 +85,20 @@
 &kp CAPS   &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SQT  &kp ENTER
 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &kp RSHFT &go_workman
                   &kp QUESTION &kp EXCL                          &kp DOT &kp COMMA
-                  &kp CARET &kp SPACE &mo L_NAV                  &none &kp ENTER &none
+                  &kp LCTRL &kp SPACE &mo L_NAV                  &none &kp ENTER &none
             >;
         };
 
         /* -------------------------------------------------------------------------------------------------
-         * LAYER 1: WORKMAN (Твоя точная раскладка со скриншота!)
+         * LAYER 1: WORKMAN (Твоя раскладка, Enter и Backspace на больших пальцах!)
          * ------------------------------------------------------------------------------------------------- */
         workman_layer {
             bindings = <
-&kp ESC    &kp Q  &kp D  &kp R  &kp W  &none                      &none  &kp F  &kp U     &kp P   &kp J    &kp BSPC
+&kp ESC    &kp Q  &kp D  &kp R  &kp W  &none                      &none  &kp F  &kp U     &kp P   &kp J    &kp TAB
 &kp CAPS   &kp A  &kp S  &kp H  &kp T  &kp G                      &kp Y  &kp N  &kp E     &kp O   &kp I    &none
 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp M  &kp L     &kp B   &lt L_NAV K &kp RSHFT
                   &kp QUESTION &kp EXCL                          &kp DOT &kp COMMA
-                  &kp CARET &nav_spc L_NAV MINUS &mo L_SYM        &none &sym_ent L_SYM ENTER &go_ru
+                  &kp ENTER &nav_spc L_NAV SPACE &sym_bspc L_SYM BSPC  &none &go_ru &none
             >;
         };
 
@@ -117,35 +107,35 @@
          * ------------------------------------------------------------------------------------------------- */
         russian_layer {
             bindings = <
-&kp ESC    &kp RU_Y  &kp RU_C  &kp RU_U  &kp RU_K  &kp RU_E        &kp RU_N  &kp RU_G  &kp RU_SH &kp RU_SHCH &kp RU_Z &kp BSPC
-&kp CAPS   &kp RU_F  &kp RU_YI &kp RU_V  &kp RU_A  &kp RU_P        &kp RU_R  &kp RU_O  &kp RU_LD &kp RU_ZHE &kp RU_E_OT &kp ENTER
-&kp LSHFT  &kp RU_YA &kp RU_CH &kp RU_SM &kp RU_I  &kp RU_T        &kp RU_SF &kp RU_B  &kp RU_YU &none      &none    &go_workman
-                     &kp QUESTION &kp EXCL                      &kp DOT   &kp COMMA
-                     &kp CARET &nav_spc L_NAV SPACE &mo L_SYM    &none &sym_ent L_SYM ENTER &go_workman
+&kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T                      &kp Y  &kp U  &kp I     &kp O   &kp P    &kp TAB
+&kp CAPS   &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SEMI &none
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &none    &go_workman
+                  &kp QUESTION &kp EXCL                          &kp DOT &kp COMMA
+                  &kp ENTER &nav_spc L_NAV SPACE &sym_bspc L_SYM BSPC  &none &go_workman &none
             >;
         };
 
         /* -------------------------------------------------------------------------------------------------
-         * LAYER 3: NAV (Навигация + отправка F16 для AHK)
+         * LAYER 3: NAV & MOUSE (Левая рука — КЛИКИ МЫШИ, Правая рука — ТРЕКБОЛ + СТРЕЛКИ)
          * ------------------------------------------------------------------------------------------------- */
         nav_layer {
             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans &none    &none    &kp PG_UP &kp UP   &kp PG_DN &trans   &sys_reset
-&trans     &kp HOME     &kp UP       &kp END      &trans &none    &kp F16  &kp LEFT  &kp DOWN &kp RIGHT &trans   &trans
-&trans     &kp LEFT     &kp DOWN     &kp RIGHT    &trans &none    &none    &kp HOME  &trans   &kp END   &trans   &trans
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans &none    &kp F16  &kp PG_UP &kp UP   &kp PG_DN &trans   &sys_reset
+&trans     &mkp LCLK    &mkp RCLK    &mkp MCLK    &trans &none    &none    &kp LEFT  &kp DOWN &kp RIGHT &trans   &trans
+&trans     &kp HOME     &kp END      &trans       &trans &none    &none    &kp HOME  &trans   &kp END   &trans   &trans
                         &kp C_VOL_DN &kp C_VOL_UP                         &trans    &trans
-                        &trans &trans &trans                              &mkp LCLK &mkp RCLK &mkp MCLK
+                        &trans &trans &trans                              &none &none &none
             >;
         };
 
         /* -------------------------------------------------------------------------------------------------
-         * LAYER 4: SYM (Символы C#/C++ + отправка F17 для AHK)
+         * LAYER 4: SYM & NUM (Цифры вверху 1-0, Программирование C#/C++ под пальцами)
          * ------------------------------------------------------------------------------------------------- */
         sym_layer {
             bindings = <
-&trans     &kp LBRC  &kp RBRC  &kp LPAR  &kp RPAR  &kp GRAVE       &div_mul  &kp N7    &kp N8    &kp N9    &minus_plus &kp F12
-&trans     &kp LBKT  &kp RBKT  &kp LT    &kp GT    &kp TILDE       &kp EQUAL &kp N4    &kp N5    &kp N6    &quotes   &trans
-&trans     &kp BSLH  &kp PIPE  &kp AMPS  &kp EXCL  &kp HASH        &kp F17   &kp N1    &kp N2    &kp N3    &kp N0    &trans
+&trans     &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0      &trans
+&trans     &kp LBRC  &kp RBRC  &kp LPAR  &kp RPAR  &kp GRAVE       &kp EQUAL &minus_plus &quotes &kp SEMI  &kp COLON   &trans
+&trans     &kp LBKT  &kp RBKT  &kp LT    &kp GT    &kp TILDE       &kp F17   &kp BSLH  &kp PIPE &kp AMPS  &kp EXCL    &trans
                      &trans    &trans                                        &trans    &trans
                      &trans    &trans    &trans                              &trans    &trans    &trans
             >;
