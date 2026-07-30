@@ -16,6 +16,7 @@
 
 / {
     macros {
+        // Сигналы смены слоев для AutoHotkey
         go_game: go_game {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -36,7 +37,6 @@
     };
 
     behaviors {
-        // Левый большой палец: Нажатие = Space, Зажатие = NAV слой
         nav_spc: nav_spc {
             compatible = "zmk,behavior-hold-tap";
             label = "NAV_SPC";
@@ -46,7 +46,6 @@
             hold-while-undecided;
         };
 
-        // Второй большой палец: Нажатие = Backspace, Зажатие = SYM слой
         sym_bspc: sym_bspc {
             compatible = "zmk,behavior-hold-tap";
             label = "SYM_BSPC";
@@ -54,6 +53,47 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             hold-while-undecided;
+        };
+
+        // Mod-Morphs для парных символов C#/C++
+        lpar_rpar: lpar_rpar {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LPAR_RPAR";
+            bindings = <&kp LPAR>, <&kp RPAR>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        lbrc_rbrc: lbrc_rbrc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LBRC_RBRC";
+            bindings = <&kp LBRC>, <&kp RBRC>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        lbkt_rbkt: lbkt_rbkt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LBKT_RBKT";
+            bindings = <&kp LBKT>, <&kp RBKT>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        lt_gt: lt_gt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LT_GT";
+            bindings = <&kp LT>, <&kp GT>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        and_or: and_or {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AND_OR";
+            bindings = <&kp AMPS>, <&kp PIPE>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         minus_plus: minus_plus {
@@ -77,28 +117,28 @@
         compatible = "zmk,keymap";
 
         /* -------------------------------------------------------------------------------------------------
-         * LAYER 0: GAME (Чистый Space, без вылетов слоев)
+         * LAYER 0: GAME (Ctrl, Shift, Esc слева, чистый Space под большим пальцем)
          * ------------------------------------------------------------------------------------------------- */
         game_layer {
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T                      &kp Y  &kp U  &kp I     &kp O   &kp P    &kp BSPC
-&kp CAPS   &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SQT  &kp ENTER
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &kp RSHFT &go_workman
+&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SQT  &kp ENTER
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &kp RSHFT &none
                   &kp QUESTION &kp EXCL                          &kp DOT &kp COMMA
-                  &kp LCTRL &kp SPACE &mo L_NAV                  &none &kp ENTER &none
+                  &kp LALT &kp SPACE &mo L_NAV                   &none &kp ENTER &none
             >;
         };
 
         /* -------------------------------------------------------------------------------------------------
-         * LAYER 1: WORKMAN (Твоя раскладка, Enter и Backspace на больших пальцах!)
+         * LAYER 1: WORKMAN (Твой кастомный Workman, мизинец: Esc/Ctrl/Shift)
          * ------------------------------------------------------------------------------------------------- */
         workman_layer {
             bindings = <
 &kp ESC    &kp Q  &kp D  &kp R  &kp W  &none                      &none  &kp F  &kp U     &kp P   &kp J    &kp TAB
-&kp CAPS   &kp A  &kp S  &kp H  &kp T  &kp G                      &kp Y  &kp N  &kp E     &kp O   &kp I    &none
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp M  &kp L     &kp B   &lt L_NAV K &kp RSHFT
+&kp LCTRL  &kp A  &kp S  &kp H  &kp T  &kp G                      &kp Y  &kp N  &kp E     &kp O   &kp I    &none
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp M  &kp L     &kp B   &kp K    &kp RSHFT
                   &kp QUESTION &kp EXCL                          &kp DOT &kp COMMA
-                  &kp ENTER &nav_spc L_NAV SPACE &sym_bspc L_SYM BSPC  &none &go_ru &none
+                  &kp ENTER &nav_spc L_NAV SPACE &sym_bspc L_SYM BSPC  &none &none &none
             >;
         };
 
@@ -108,19 +148,19 @@
         russian_layer {
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T                      &kp Y  &kp U  &kp I     &kp O   &kp P    &kp TAB
-&kp CAPS   &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SEMI &none
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &none    &go_workman
+&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SEMI &none
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &none    &none
                   &kp QUESTION &kp EXCL                          &kp DOT &kp COMMA
-                  &kp ENTER &nav_spc L_NAV SPACE &sym_bspc L_SYM BSPC  &none &go_workman &none
+                  &kp ENTER &nav_spc L_NAV SPACE &sym_bspc L_SYM BSPC  &none &none &none
             >;
         };
 
         /* -------------------------------------------------------------------------------------------------
-         * LAYER 3: NAV & MOUSE (Левая рука — КЛИКИ МЫШИ, Правая рука — ТРЕКБОЛ + СТРЕЛКИ)
+         * LAYER 3: NAV (Центральный Хаб: Q=GAME, W=WORKMAN, E=RUSSIAN + Левая рука = Клики, Правая = Стрелки)
          * ------------------------------------------------------------------------------------------------- */
         nav_layer {
             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans &none    &kp F16  &kp PG_UP &kp UP   &kp PG_DN &trans   &sys_reset
+&bt BT_CLR &go_game     &go_workman  &go_ru       &trans &none    &kp F16  &kp PG_UP &kp UP   &kp PG_DN &trans   &sys_reset
 &trans     &mkp LCLK    &mkp RCLK    &mkp MCLK    &trans &none    &none    &kp LEFT  &kp DOWN &kp RIGHT &trans   &trans
 &trans     &kp HOME     &kp END      &trans       &trans &none    &none    &kp HOME  &trans   &kp END   &trans   &trans
                         &kp C_VOL_DN &kp C_VOL_UP                         &trans    &trans
@@ -129,15 +169,15 @@
         };
 
         /* -------------------------------------------------------------------------------------------------
-         * LAYER 4: SYM & NUM (Цифры вверху 1-0, Программирование C#/C++ под пальцами)
+         * LAYER 4: SYM (Парные символы C#/C++ через Mod-Morph + Цифры 1-0)
          * ------------------------------------------------------------------------------------------------- */
         sym_layer {
             bindings = <
-&trans     &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0      &trans
-&trans     &kp LBRC  &kp RBRC  &kp LPAR  &kp RPAR  &kp GRAVE       &kp EQUAL &minus_plus &quotes &kp SEMI  &kp COLON   &trans
-&trans     &kp LBKT  &kp RBKT  &kp LT    &kp GT    &kp TILDE       &kp F17   &kp BSLH  &kp PIPE &kp AMPS  &kp EXCL    &trans
-                     &trans    &trans                                        &trans    &trans
-                     &trans    &trans    &trans                              &trans    &trans    &trans
+&trans     &kp N1     &kp N2     &kp N3     &kp N4    &kp N5       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0      &trans
+&trans     &lbrc_rbrc &lpar_rpar &lbkt_rbkt &lt_gt   &kp GRAVE    &kp EQUAL &minus_plus &quotes &kp SEMI  &kp COLON   &trans
+&trans     &and_or    &kp BSLH   &kp EXCL   &kp HASH  &kp TILDE    &kp F17   &kp PIPE  &kp AMPS  &kp TILDE &kp EXCL    &trans
+                      &trans     &trans                                      &trans    &trans
+                      &trans     &trans     &trans                           &trans    &trans    &trans
             >;
         };
     };
