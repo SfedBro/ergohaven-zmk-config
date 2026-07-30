@@ -16,23 +16,25 @@
 
 / {
     macros {
-        // Сигналы смены слоев для AutoHotkey
+        // Переход в Игры (F13)
         go_game: go_game {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to L_GAME &kp F13>;
         };
 
+        // Переход в Workman + Переключение Windows на Английский (Alt+Shift) + F14
         go_workman: go_workman {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to L_WORKMAN &kp F14>;
+            bindings = <&to L_WORKMAN &kp LA(LSHFT) &kp F14>;
         };
 
+        // Переход в Русский + Переключение Windows на Русский (Alt+Shift) + F15
         go_ru: go_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to L_RU &kp F15>;
+            bindings = <&to L_RU &kp LA(LSHFT) &kp F15>;
         };
     };
 
@@ -55,7 +57,6 @@
             hold-while-undecided;
         };
 
-        // Mod-Morphs для парных символов C#/C++
         lpar_rpar: lpar_rpar {
             compatible = "zmk,behavior-mod-morph";
             label = "LPAR_RPAR";
@@ -116,22 +117,18 @@
     keymap {
         compatible = "zmk,keymap";
 
-        /* -------------------------------------------------------------------------------------------------
-         * LAYER 0: GAME (Ctrl, Shift, Esc слева, чистый Space под большим пальцем)
-         * ------------------------------------------------------------------------------------------------- */
+        /* LAYER 0: GAME (Левый большой палец = 100% Чистый SPACE) */
         game_layer {
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T                      &kp Y  &kp U  &kp I     &kp O   &kp P    &kp BSPC
 &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SQT  &kp ENTER
 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &kp RSHFT &none
                   &kp QUESTION &kp EXCL                          &kp DOT &kp COMMA
-                  &kp LALT &kp SPACE &mo L_NAV                   &none &kp ENTER &none
+                  &kp LALT &kp SPACE &mo L_NAV                   &none &none &none
             >;
         };
 
-        /* -------------------------------------------------------------------------------------------------
-         * LAYER 1: WORKMAN (Твой кастомный Workman, мизинец: Esc/Ctrl/Shift)
-         * ------------------------------------------------------------------------------------------------- */
+        /* LAYER 1: WORKMAN (Твой Workman, 1 в 1 выравнивание thumbs) */
         workman_layer {
             bindings = <
 &kp ESC    &kp Q  &kp D  &kp R  &kp W  &none                      &none  &kp F  &kp U     &kp P   &kp J    &kp TAB
@@ -142,9 +139,7 @@
             >;
         };
 
-        /* -------------------------------------------------------------------------------------------------
-         * LAYER 2: RUSSIAN (Русский ЙЦУКЕН)
-         * ------------------------------------------------------------------------------------------------- */
+        /* LAYER 2: RUSSIAN (Русский ЙЦУКЕН) */
         russian_layer {
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T                      &kp Y  &kp U  &kp I     &kp O   &kp P    &kp TAB
@@ -155,9 +150,7 @@
             >;
         };
 
-        /* -------------------------------------------------------------------------------------------------
-         * LAYER 3: NAV (Центральный Хаб: Q=GAME, W=WORKMAN, E=RUSSIAN + Левая рука = Клики, Правая = Стрелки)
-         * ------------------------------------------------------------------------------------------------- */
+        /* LAYER 3: NAV (Центральный переключатель: Q=GAME, W=WORKMAN, E=RUSSIAN) */
         nav_layer {
             bindings = <
 &bt BT_CLR &go_game     &go_workman  &go_ru       &trans &none    &kp F16  &kp PG_UP &kp UP   &kp PG_DN &trans   &sys_reset
@@ -168,9 +161,7 @@
             >;
         };
 
-        /* -------------------------------------------------------------------------------------------------
-         * LAYER 4: SYM (Парные символы C#/C++ через Mod-Morph + Цифры 1-0)
-         * ------------------------------------------------------------------------------------------------- */
+        /* LAYER 4: SYM (Символы C#/C++ + Цифры 1-0) */
         sym_layer {
             bindings = <
 &trans     &kp N1     &kp N2     &kp N3     &kp N4    &kp N5       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0      &trans
