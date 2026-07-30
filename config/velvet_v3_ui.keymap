@@ -16,21 +16,18 @@
 
 / {
     macros {
-        // Переход в Игры (F13)
         go_game: go_game {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to L_GAME &kp F13>;
         };
 
-        // Переход в Workman + Переключение Windows на Английский (Alt+Shift) + F14
         go_workman: go_workman {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to L_WORKMAN &kp LA(LSHFT) &kp F14>;
         };
 
-        // Переход в Русский + Переключение Windows на Русский (Alt+Shift) + F15
         go_ru: go_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -117,40 +114,48 @@
     keymap {
         compatible = "zmk,keymap";
 
-        /* LAYER 0: GAME (Левый большой палец = 100% Чистый SPACE) */
+        /* -------------------------------------------------------------------------------------------------
+         * LAYER 0: GAME (Esc сверху, Shift посередине, Ctrl снизу, NAV строго на левом большом пальце!)
+         * ------------------------------------------------------------------------------------------------- */
         game_layer {
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T                      &kp Y  &kp U  &kp I     &kp O   &kp P    &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SQT  &kp ENTER
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &kp RSHFT &none
+&kp LSHFT  &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SQT  &kp ENTER
+&kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &none    &kp RSHFT
                   &kp QUESTION &kp EXCL                          &kp DOT &kp COMMA
                   &kp LALT &kp SPACE &mo L_NAV                   &none &none &none
             >;
         };
 
-        /* LAYER 1: WORKMAN (Твой Workman, 1 в 1 выравнивание thumbs) */
+        /* -------------------------------------------------------------------------------------------------
+         * LAYER 1: WORKMAN (Твой Workman, 1 в 1 выровненные Shift/Ctrl и левый NAV)
+         * ------------------------------------------------------------------------------------------------- */
         workman_layer {
             bindings = <
 &kp ESC    &kp Q  &kp D  &kp R  &kp W  &none                      &none  &kp F  &kp U     &kp P   &kp J    &kp TAB
-&kp LCTRL  &kp A  &kp S  &kp H  &kp T  &kp G                      &kp Y  &kp N  &kp E     &kp O   &kp I    &none
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp M  &kp L     &kp B   &kp K    &kp RSHFT
+&kp LSHFT  &kp A  &kp S  &kp H  &kp T  &kp G                      &kp Y  &kp N  &kp E     &kp O   &kp I    &none
+&kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp M  &kp L     &kp B   &kp K    &kp RSHFT
                   &kp QUESTION &kp EXCL                          &kp DOT &kp COMMA
                   &kp ENTER &nav_spc L_NAV SPACE &sym_bspc L_SYM BSPC  &none &none &none
             >;
         };
 
-        /* LAYER 2: RUSSIAN (Русский ЙЦУКЕН) */
+        /* -------------------------------------------------------------------------------------------------
+         * LAYER 2: RUSSIAN (Русский ЙЦУКЕН)
+         * ------------------------------------------------------------------------------------------------- */
         russian_layer {
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T                      &kp Y  &kp U  &kp I     &kp O   &kp P    &kp TAB
-&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SEMI &none
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &none    &none
+&kp LSHFT  &kp A  &kp S  &kp D  &kp F  &kp G                      &kp H  &kp J  &kp K     &kp L   &kp SEMI &none
+&kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &none                      &none  &kp B  &kp N     &kp M   &none    &kp RSHFT
                   &kp QUESTION &kp EXCL                          &kp DOT &kp COMMA
                   &kp ENTER &nav_spc L_NAV SPACE &sym_bspc L_SYM BSPC  &none &none &none
             >;
         };
 
-        /* LAYER 3: NAV (Центральный переключатель: Q=GAME, W=WORKMAN, E=RUSSIAN) */
+        /* -------------------------------------------------------------------------------------------------
+         * LAYER 3: NAV (Хаб: Q=GAME, W=WORKMAN, E=RUSSIAN)
+         * ------------------------------------------------------------------------------------------------- */
         nav_layer {
             bindings = <
 &bt BT_CLR &go_game     &go_workman  &go_ru       &trans &none    &kp F16  &kp PG_UP &kp UP   &kp PG_DN &trans   &sys_reset
@@ -161,7 +166,9 @@
             >;
         };
 
-        /* LAYER 4: SYM (Символы C#/C++ + Цифры 1-0) */
+        /* -------------------------------------------------------------------------------------------------
+         * LAYER 4: SYM (Символы C#/C++ + Цифры 1-0)
+         * ------------------------------------------------------------------------------------------------- */
         sym_layer {
             bindings = <
 &trans     &kp N1     &kp N2     &kp N3     &kp N4    &kp N5       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0      &trans
