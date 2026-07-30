@@ -19,19 +19,19 @@
         go_game: go_game {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to L_GAME &kp F13>;
+            bindings = <&to L_GAME>, <&kp F13>;
         };
 
         go_workman: go_workman {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to L_WORKMAN &kp LA(LSHFT) &kp F14>;
+            bindings = <&to L_WORKMAN>, <&kp LA(LSHFT)>, <&kp F14>;
         };
 
         go_ru: go_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to L_RU &kp LA(LSHFT) &kp F15>;
+            bindings = <&to L_RU>, <&kp LA(LSHFT)>, <&kp F15>;
         };
     };
 
