@@ -25,30 +25,32 @@
         go_workman: go_workman {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to L_WORKMAN>, <&kp LA(LSHFT)>, <&kp F14>;
+            bindings = <&to L_WORKMAN>, <&kp LA(LSFT)>, <&kp F14>;
         };
 
         go_ru: go_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to L_RU>, <&kp LA(LSHFT)>, <&kp F15>;
+            bindings = <&to L_RU>, <&kp LA(LSFT)>, <&kp F15>;
         };
     };
 
     behaviors {
+        // ИСПРАВЛЕНО: <&mo>, <&kp> вместо <&mo L_NAV>
         nav_spc: nav_spc {
             compatible = "zmk,behavior-hold-tap";
             label = "NAV_SPC";
-            bindings = <&mo L_NAV>, <&kp>;
+            bindings = <&mo>, <&kp>;
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             hold-while-undecided;
         };
 
+        // ИСПРАВЛЕНО: <&mo>, <&kp> вместо <&mo L_SYM>
         sym_bspc: sym_bspc {
             compatible = "zmk,behavior-hold-tap";
             label = "SYM_BSPC";
-            bindings = <&mo L_SYM>, <&kp>;
+            bindings = <&mo>, <&kp>;
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             hold-while-undecided;
