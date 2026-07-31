@@ -98,7 +98,15 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        // Математика и парные знаки
+        // Математика: = и ==
+        eq_deq: eq_deq {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EQ_DEQ";
+            bindings = <&kp EQUAL>, <&kp EQUAL>; // В ZMK двойной символ через Shift
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         minus_plus: minus_plus {
             compatible = "zmk,behavior-mod-morph";
             label = "MINUS_PLUS";
@@ -179,7 +187,7 @@
             >;
         };
 
-        /* LAYER 2: RUSSIAN */
+        /* LAYER 2: RUSSIAN (Чистый ЙЦУКЕН без рваных букв) */
         russian_layer {
             bindings = <
 &kp ESC    &kp Q  &kp W         &kp E     &kp R      &kp T                                        &kp Y     &kp U  &kp I  &kp O  &kp P      &kp LBKT
@@ -189,7 +197,7 @@
             >;
         };
 
-        /* LAYER 3: NAV (Указательный = ЛКМ, Home/End под Указательным и Средним!) */
+        /* LAYER 3: NAV */
         nav_layer {
             bindings = <
 &bt BT_CLR  &go_game   &go_workman   &go_ru        &screen_snippet  &task_mgr                    &kp F16  &kp F1    &kp UP    &kp F3     &kp F4  &kp F11
@@ -199,11 +207,11 @@
             >;
         };
 
-        /* LAYER 4: SYM (Скобки по частоте: [] <> {} () + Математика: = -+ /* ) */
+        /* LAYER 4: SYM */
         sym_layer {
             bindings = <
 &trans  &kp N1      &kp N2      &kp N3      &kp N4          &kp N5                          &kp N6     &kp N7       &kp N8    &kp N9        &kp N0     &trans
-&trans  &lbkt_rbkt  &lt_gt      &lbrc_rbrc  &lpar_rpar      &grave_tilde                    &kp EQUAL  &minus_plus  &div_mul  &kp SEMI      &kp COLON  &trans
+&trans  &lbkt_rbkt  &lt_gt      &lbrc_rbrc  &lpar_rpar      &grave_tilde                    &eq_deq    &minus_plus  &div_mul  &kp SEMI      &kp COLON  &trans
 &trans  &and_or     &kp BSLH    &at_hash    &percent_caret  &kp DLLR                        &kp F17    &kp PIPE     &kp AMPS  &grave_tilde  &quotes    &trans
                     &trans      &trans      &trans          &trans        &trans    &trans  &trans     &trans       &trans    &trans
             >;
