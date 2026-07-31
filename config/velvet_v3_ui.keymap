@@ -65,6 +65,22 @@
             hold-while-undecided;
         };
 
+        comma_dot: comma_dot {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_DOT";
+            bindings = <&kp COMMA>, <&kp DOT>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        excl_quest: excl_quest {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EXCL_QUEST";
+            bindings = <&kp EXCL>, <&kp QUESTION>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         lpar_rpar: lpar_rpar {
             compatible = "zmk,behavior-mod-morph";
             label = "LPAR_RPAR";
@@ -97,10 +113,10 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        eq_deq: eq_deq {
+        eq_under: eq_under {
             compatible = "zmk,behavior-mod-morph";
-            label = "EQ_DEQ";
-            bindings = <&kp EQUAL>, <&kp EQUAL>;
+            label = "EQ_UNDER";
+            bindings = <&kp EQUAL>, <&kp UNDER>;
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -171,7 +187,7 @@
 &kp ESC    &kp Q  &kp W         &kp E     &kp R     &kp T                            &kp Y      &kp U  &kp I        &kp O         &kp P        &kp BSPC
 &kp LSHFT  &kp A  &kp S         &kp D     &kp F     &kp G                            &kp H      &kp J  &kp K        &kp L         &kp SQT      &kp ENTER
 &kp LCTRL  &kp Z  &kp X         &kp C     &kp V     &none                            &none      &kp B  &kp N        &kp M         &kp AT       &kp RSHFT
-                  &kp QUESTION  &kp EXCL  &kp LALT  &kp SPACE  &mo L_NAV    &kp DOT  &kp COMMA  &none  &kp KP_PLUS  &kp KP_MINUS
+                  &excl_quest   &none     &kp LALT  &kp SPACE  &mo L_NAV    &comma_dot &none     &none  &kp KP_PLUS  &kp KP_MINUS
             >;
         };
 
@@ -181,17 +197,17 @@
 &kp ESC    &kp Q  &kp D         &kp R     &kp W      &none                                          &none      &kp F  &kp U  &kp P  &kp J  &kp TAB
 &kp LSHFT  &kp A  &kp S         &kp H     &kp T      &kp G                                          &kp Y      &kp N  &kp E  &kp O  &kp I  &none
 &kp LCTRL  &kp Z  &kp X         &kp C     &kp V      &none                                          &none      &kp M  &kp L  &kp B  &kp K  &kp RSHFT
-                  &kp QUESTION  &kp EXCL  &kp ENTER  &nav_spc 4 SPACE  &sym_bspc 3 BSPC    &kp DOT  &kp COMMA  &none  &none  &none
+                  &excl_quest   &none     &kp ENTER  &nav_spc 4 SPACE  &sym_bspc 3 BSPC    &comma_dot &none  &none  &none  &none
             >;
         };
 
-        /* LAYER 2: RUSSIAN (Стандартный ЙЦУКЕН: Я Ч С М | И Т Ь Б Ю, RSHFT справа) */
+        /* LAYER 2: RUSSIAN */
         russian_layer {
             bindings = <
 &kp ESC    &kp Q  &kp W         &kp E     &kp R      &kp T                                        &kp Y     &kp U  &kp I  &kp O  &kp P      &kp LBKT
 &kp LSHFT  &kp A  &kp S         &kp D     &kp F      &kp G                                        &kp H     &kp J  &kp K  &kp L  &kp SEMI   &kp SQT
 &kp LCTRL  &kp Z  &kp X         &kp C     &kp V      &kp GRAVE                                    &kp B     &kp N  &kp M  &kp COMMA &kp DOT &kp RSHFT
-                  &kp QUESTION  &kp EXCL  &kp ENTER  &nav_spc 4 SPACE  &sym_bspc 3 BSPC    &none  &none     &none  &none  &none
+                  &excl_quest   &none     &kp ENTER  &nav_spc 4 SPACE  &sym_bspc 3 BSPC    &comma_dot &none  &none  &none  &none
             >;
         };
 
@@ -209,9 +225,9 @@
         sym_layer {
             bindings = <
 &trans  &kp N1      &kp N2      &kp N3      &kp N4          &kp N5                          &kp N6     &kp N7       &kp N8    &kp N9        &kp N0     &trans
-&trans  &lbkt_rbkt  &lt_gt      &lbrc_rbrc  &lpar_rpar      &grave_tilde                    &eq_deq    &minus_plus  &div_mul  &kp SEMI      &kp COLON  &trans
-&trans  &and_or     &kp BSLH    &at_hash    &percent_caret  &kp DLLR                        &kp F17    &kp PIPE     &kp AMPS  &grave_tilde  &quotes    &trans
-                    &trans      &trans      &trans          &trans        &trans    &trans  &trans     &trans       &trans    &trans
+&trans  &lbkt_rbkt  &lt_gt      &lbrc_rbrc  &lpar_rpar      &grave_tilde                    &eq_under  &minus_plus  &quotes   &kp SEMI      &kp COLON  &trans
+&trans  &and_or     &kp BSLH    &at_hash    &percent_caret  &kp DLLR                        &kp F17    &div_mul     &kp AMPS  &grave_tilde  &quotes    &trans
+                    &excl_quest &trans      &trans          &trans        &trans    &trans  &comma_dot &trans       &trans    &trans
             >;
         };
     };
