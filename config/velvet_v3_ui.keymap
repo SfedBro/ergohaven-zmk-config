@@ -187,17 +187,17 @@
 &kp ESC    &kp Q  &kp W         &kp E     &kp R     &kp T                            &kp Y      &kp U  &kp I        &kp O         &kp P        &kp BSPC
 &kp LSHFT  &kp A  &kp S         &kp D     &kp F     &kp G                            &kp H      &kp J  &kp K        &kp L         &kp SQT      &kp ENTER
 &kp LCTRL  &kp Z  &kp X         &kp C     &kp V     &none                            &none      &kp B  &kp N        &kp M         &kp AT       &kp RSHFT
-                  &none         &excl_quest &kp LALT &kp SPACE &mo L_NAV    &comma_dot &none     &none  &kp KP_PLUS  &kp KP_MINUS
+                  &none         &excl_quest &comma_dot &none  &kp LALT &kp SPACE &mo L_NAV  &none  &none &none
             >;
         };
 
-        /* LAYER 1: WORKMAN (excl_quest правее, comma_dot на зеленой кнопке!) */
+        /* LAYER 1: WORKMAN (comma_dot назеленой кнопке!) */
         workman_layer {
             bindings = <
 &kp ESC    &kp Q  &kp D         &kp R     &kp W      &none                                          &none      &kp F  &kp U  &kp P  &kp J  &kp TAB
 &kp LSHFT  &kp A  &kp S         &kp H     &kp T      &kp G                                          &kp Y      &kp N  &kp E  &kp O  &kp I  &none
 &kp LCTRL  &kp Z  &kp X         &kp C     &kp V      &none                                          &none      &kp M  &kp L  &kp B  &kp K  &kp RSHFT
-                  &none         &excl_quest &kp ENTER &nav_spc 4 SPACE &sym_bspc 3 BSPC    &comma_dot &none  &none  &none  &none
+                  &none         &excl_quest &comma_dot &none  &kp ENTER &nav_spc 4 SPACE &sym_bspc 3 BSPC  &none  &none  &none
             >;
         };
 
@@ -207,7 +207,7 @@
 &kp ESC    &kp Q  &kp W         &kp E     &kp R      &kp T                                        &kp Y     &kp U  &kp I  &kp O  &kp P      &kp LBKT
 &kp LSHFT  &kp A  &kp S         &kp D     &kp F      &kp G                                        &kp H     &kp J  &kp K  &kp L  &kp SEMI   &kp SQT
 &kp LCTRL  &kp Z  &kp X         &kp C     &kp V      &kp GRAVE                                    &kp B     &kp N  &kp M  &kp COMMA &kp DOT &kp RSHFT
-                  &none         &excl_quest &kp ENTER &nav_spc 4 SPACE &sym_bspc 3 BSPC    &comma_dot &none  &none  &none  &none
+                  &none         &excl_quest &comma_dot &none  &kp ENTER &nav_spc 4 SPACE &sym_bspc 3 BSPC  &none  &none  &none
             >;
         };
 
@@ -217,7 +217,7 @@
 &bt BT_CLR  &go_game   &go_workman   &go_ru        &screen_snippet  &task_mgr                    &kp F16  &kp F1    &kp UP    &kp F3     &kp F4  &kp F11
 &trans      &kp LA(TAB) &mkp MCLK    &mkp RCLK     &mkp LCLK        &kp LG(D)                    &none    &kp LEFT  &kp DOWN  &kp RIGHT  &kp F5  &kp F12
 &trans      &trans     &trans        &kp END       &kp HOME         &none                        &none    &kp F6    &kp F7    &kp F8     &kp F9  &kp F10
-                       &kp C_VOL_DN  &kp C_VOL_UP  &trans           &trans     &trans    &trans  &trans   &none     &none     &none
+                       &kp C_VOL_DN  &kp C_VOL_UP  &none            &none      &trans   &trans   &trans   &none     &none     &none
             >;
         };
 
@@ -227,7 +227,7 @@
 &trans  &kp N1      &kp N2      &kp N3      &kp N4          &kp N5                          &kp N6     &kp N7       &kp N8    &kp N9        &kp N0     &trans
 &trans  &lbkt_rbkt  &lt_gt      &lbrc_rbrc  &lpar_rpar      &grave_tilde                    &eq_under  &minus_plus  &quotes   &kp SEMI      &kp COLON  &trans
 &trans  &and_or     &kp BSLH    &at_hash    &percent_caret  &kp DLLR                        &kp F17    &div_mul     &kp AMPS  &grave_tilde  &quotes    &trans
-                    &none       &excl_quest &trans          &trans        &trans    &trans  &comma_dot &none        &trans    &trans
+                    &none       &excl_quest &comma_dot      &none        &trans    &trans   &trans     &none        &trans    &trans
             >;
         };
     };
