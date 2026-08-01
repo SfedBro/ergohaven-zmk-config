@@ -18,19 +18,19 @@
         go_game: go_game {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to L_GAME>, <&kp F13>;
+            bindings = <&to L_GAME &kp F13>;
         };
 
         go_workman: go_workman {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to L_WORKMAN>, <&kp LA(LSFT)>, <&kp F14>;
+            bindings = <&to L_WORKMAN &kp LA(LSFT) &kp F14>;
         };
 
         go_ru: go_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to L_RU>, <&kp LA(LSFT)>, <&kp F15>;
+            bindings = <&to L_RU &kp LA(LSFT) &kp F15>;
         };
 
         screen_snippet: screen_snippet {
@@ -51,6 +51,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "NAV_SPC";
             bindings = <&mo>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             hold-while-undecided;
@@ -60,6 +61,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "SYM_BSPC";
             bindings = <&mo>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             hold-while-undecided;
@@ -69,6 +71,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "COMMA_DOT";
             bindings = <&kp COMMA>, <&kp DOT>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -77,6 +80,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "EXCL_QUEST";
             bindings = <&kp EXCL>, <&kp QUESTION>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -85,6 +89,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "LPAR_RPAR";
             bindings = <&kp LPAR>, <&kp RPAR>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -93,6 +98,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "LBRC_RBRC";
             bindings = <&kp LBRC>, <&kp RBRC>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -101,6 +107,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "LBKT_RBKT";
             bindings = <&kp LBKT>, <&kp RBKT>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -109,6 +116,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "LT_GT";
             bindings = <&kp LT>, <&kp GT>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -117,6 +125,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "EQ_UNDER";
             bindings = <&kp EQUAL>, <&kp UNDER>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -125,6 +134,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MINUS_PLUS";
             bindings = <&kp MINUS>, <&kp PLUS>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -133,6 +143,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "DIV_MUL";
             bindings = <&kp SLASH>, <&kp ASTERISK>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -141,6 +152,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "AND_OR";
             bindings = <&kp AMPS>, <&kp PIPE>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -149,6 +161,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "QUOTES";
             bindings = <&kp SQT>, <&kp DOUBLE_QUOTES>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -157,6 +170,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "AT_HASH";
             bindings = <&kp AT>, <&kp HASH>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -165,6 +179,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "PERCENT_CARET";
             bindings = <&kp PRCNT>, <&kp CARET>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -173,6 +188,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "GRAVE_TILDE";
             bindings = <&kp GRAVE>, <&kp TILDE>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -182,52 +198,57 @@
         compatible = "zmk,keymap";
 
         /* LAYER 0: GAME */
+
         game_layer {
             bindings = <
-&kp ESC    &kp Q  &kp W         &kp E     &kp R     &kp T                            &kp Y      &kp U  &kp I        &kp O         &kp P        &kp BSPC
-&kp LSHFT  &kp A  &kp S         &kp D     &kp F     &kp G                            &kp H      &kp J  &kp K        &kp L         &kp SQT      &kp ENTER
-&kp LCTRL  &kp Z  &kp X         &kp C     &kp V     &kp B                            &kp N      &kp M  &kp COMMA    &kp DOT       &kp AT       &kp RSHFT
-                  &none         &excl_quest &kp LALT &kp SPACE &mo L_NAV  &none &none &none &comma_dot &none
+&kp ESC    &kp Q  &kp W  &kp E        &kp R     &kp T                          &kp Y  &kp U  &kp I       &kp O    &kp P    &kp BSPC
+&kp LSHFT  &kp A  &kp S  &kp D        &kp F     &kp G                          &kp H  &kp J  &kp K       &kp L    &kp SQT  &kp ENTER
+&kp LCTRL  &kp Z  &kp X  &kp C        &kp V     &kp B                          &kp N  &kp M  &kp COMMA   &kp DOT  &kp AT   &kp RSHFT
+                  &none  &excl_quest  &kp LALT  &kp SPACE  &mo L_NAV    &none  &none  &none  &comma_dot  &none
             >;
         };
 
         /* LAYER 1: WORKMAN */
+
         workman_layer {
             bindings = <
-&kp ESC    &kp Q  &kp D         &kp R     &kp W      &none                                          &none      &kp F  &kp U  &kp P  &kp J  &kp TAB
-&kp LSHFT  &kp A  &kp S         &kp H     &kp T      &kp G                                          &kp Y      &kp N  &kp E  &kp O  &kp I  &none
-&kp LCTRL  &kp Z  &kp X         &kp C     &kp V      &none                                          &none      &kp M  &kp L  &kp B  &kp K  &kp RSHFT
-                  &none         &excl_quest &kp ENTER &nav_spc 4 SPACE &sym_bspc 3 BSPC  &none &none &none &comma_dot &none
+&kp ESC    &kp Q  &kp D  &kp R        &kp W      &none                                        &none  &kp F  &kp U       &kp P  &kp J  &kp TAB
+&kp LSHFT  &kp A  &kp S  &kp H        &kp T      &kp G                                        &kp Y  &kp N  &kp E       &kp O  &kp I  &none
+&kp LCTRL  &kp Z  &kp X  &kp C        &kp V      &none                                        &none  &kp M  &kp L       &kp B  &kp K  &kp RSHFT
+                  &none  &excl_quest  &kp ENTER  &nav_spc 4 SPACE  &sym_bspc 3 BSPC    &none  &none  &none  &comma_dot  &none
             >;
         };
 
         /* LAYER 2: RUSSIAN */
+
         russian_layer {
             bindings = <
-&kp ESC    &kp Q  &kp W         &kp E     &kp R      &kp T                                        &kp Y     &kp U  &kp I  &kp O  &kp P      &kp LBKT
-&kp LSHFT  &kp A  &kp S         &kp D     &kp F      &kp G                                        &kp H     &kp J  &kp K  &kp L  &kp SEMI   &kp SQT
-&kp LCTRL  &kp Z  &kp X         &kp C     &kp V      &kp B                                        &kp N     &kp M  &kp COMMA &kp DOT &kp RBKT &kp RSHFT
-                  &none         &excl_quest &kp ENTER &nav_spc 4 SPACE &sym_bspc 3 BSPC  &none &none &none &comma_dot &none
+&kp ESC    &kp Q  &kp W  &kp E        &kp R      &kp T                                        &kp Y  &kp U  &kp I       &kp O    &kp P     &kp LBKT
+&kp LSHFT  &kp A  &kp S  &kp D        &kp F      &kp G                                        &kp H  &kp J  &kp K       &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C        &kp V      &kp B                                        &kp N  &kp M  &kp COMMA   &kp DOT  &kp RBKT  &kp RSHFT
+                  &none  &excl_quest  &kp ENTER  &nav_spc 4 SPACE  &sym_bspc 3 BSPC    &none  &none  &none  &comma_dot  &none
             >;
         };
 
         /* LAYER 3: NAV */
+
         nav_layer {
             bindings = <
-&bt BT_CLR  &go_game   &go_workman   &go_ru        &screen_snippet  &task_mgr                    &kp F16  &kp F1    &kp UP    &kp F3     &kp F4  &kp F11
-&trans      &kp LA(TAB) &mkp MCLK    &mkp RCLK     &mkp LCLK        &kp LG(D)                    &none    &kp LEFT  &kp DOWN  &kp RIGHT  &kp F5  &kp F12
-&trans      &trans     &trans        &kp END       &kp HOME         &none                        &none    &kp F6    &kp F7    &kp F8     &kp F9  &kp F10
-                       &kp C_VOL_DN  &kp C_VOL_UP  &trans           &trans     &trans    &trans  &trans   &none     &none     &none
+&bt BT_CLR  &go_game     &go_workman   &go_ru        &screen_snippet  &task_mgr                    &kp F16  &kp F1    &kp UP    &kp F3     &kp F4  &kp F11
+&trans      &kp LA(TAB)  &mkp MCLK     &mkp RCLK     &mkp LCLK        &kp LG(D)                    &none    &kp LEFT  &kp DOWN  &kp RIGHT  &kp F5  &kp F12
+&trans      &trans       &trans        &kp END       &kp HOME         &none                        &none    &kp F6    &kp F7    &kp F8     &kp F9  &kp F10
+                         &kp C_VOL_DN  &kp C_VOL_UP  &trans           &trans     &trans    &trans  &trans   &none     &none     &none
             >;
         };
 
         /* LAYER 4: SYM (Без дублей, все знаки !/?  / /*  / ,/.  / '" на нижнем ряду правой руки!) */
+
         sym_layer {
             bindings = <
-&trans  &kp N1      &kp N2      &kp N3          &kp N4          &kp N5                          &kp N6     &kp N7       &kp N8     &kp N9        &kp N0     &trans
-&trans  &lbkt_rbkt  &lt_gt      &lbrc_rbrc      &lpar_rpar      &grave_tilde                    &none      &eq_under    &minus_plus &quotes     &kp SEMI   &none
-&trans  &kp DLLR    &at_hash    &percent_caret  &and_or         &kp BSLH                        &kp F17    &excl_quest  &div_mul   &comma_dot    &quotes    &trans
-                    &none       &excl_quest     &trans          &trans        &trans    &trans  &none      &none        &none      &comma_dot
+&trans  &kp N1      &kp N2    &kp N3          &kp N4      &kp N5                          &kp N6   &kp N7       &kp N8       &kp N9      &kp N0    &trans
+&trans  &lbkt_rbkt  &lt_gt    &lbrc_rbrc      &lpar_rpar  &grave_tilde                    &none    &eq_under    &minus_plus  &quotes     &kp SEMI  &none
+&trans  &kp DLLR    &at_hash  &percent_caret  &and_or     &kp BSLH                        &kp F17  &excl_quest  &div_mul     &comma_dot  &quotes   &trans
+                    &none     &excl_quest     &trans      &trans        &trans    &trans  &none    &none        &comma_dot   &none
             >;
         };
     };
