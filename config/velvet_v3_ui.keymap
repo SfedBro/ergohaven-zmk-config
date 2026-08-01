@@ -221,13 +221,13 @@
             >;
         };
 
-        /* LAYER 4: SYM (Перестановки: &| под указательный, =/_ -/+ '\' сдвинуты вправо) */
+        /* LAYER 4: SYM (Без дублей, все знаки !/?  / /*  / ,/.  / '" на нижнем ряду правой руки!) */
         sym_layer {
             bindings = <
-&trans  &kp N1      &kp N2      &kp N3          &kp N4          &kp N5                          &kp N6     &kp N7       &kp N8    &kp N9        &kp N0     &trans
+&trans  &kp N1      &kp N2      &kp N3          &kp N4          &kp N5                          &kp N6     &kp N7       &kp N8     &kp N9        &kp N0     &trans
 &trans  &lbkt_rbkt  &lt_gt      &lbrc_rbrc      &lpar_rpar      &grave_tilde                    &none      &eq_under    &minus_plus &quotes     &kp SEMI   &none
-&trans  &kp DLLR    &at_hash    &percent_caret  &and_or         &kp BSLH                        &kp F17    &none        &div_mul  &grave_tilde  &none      &trans
-                    &none       &excl_quest     &trans          &trans        &trans    &trans  &none      &none        &none     &comma_dot
+&trans  &kp DLLR    &at_hash    &percent_caret  &and_or         &kp BSLH                        &kp F17    &excl_quest  &div_mul   &comma_dot    &quotes    &trans
+                    &none       &excl_quest     &trans          &trans        &trans    &trans  &none      &none        &none      &comma_dot
             >;
         };
     };
